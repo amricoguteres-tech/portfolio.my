@@ -248,16 +248,28 @@
       welcomeAudio.muted = false;
       welcomeAudio.currentTime = 0;
       await welcomeAudio.play();
-      document.removeEventListener('pointerdown', playWelcomeAudio);
-      document.removeEventListener('keydown', playWelcomeAudio);
+      removeWelcomeAudioListeners();
     } catch (error) {
-      document.addEventListener('pointerdown', playWelcomeAudio, {once:true});
-      document.addEventListener('keydown', playWelcomeAudio, {once:true});
-      document.addEventListener('touchstart', playWelcomeAudio, {once:true, passive:true});
+      addWelcomeAudioListeners();
     }
   }
 
+  function addWelcomeAudioListeners() {
+    document.addEventListener('pointerdown', playWelcomeAudio, {once:true});
+    document.addEventListener('touchstart', playWelcomeAudio, {once:true, passive:true});
+    document.addEventListener('touchend', playWelcomeAudio, {once:true, passive:true});
+    document.addEventListener('keydown', playWelcomeAudio, {once:true});
+  }
+
+  function removeWelcomeAudioListeners() {
+    document.removeEventListener('pointerdown', playWelcomeAudio);
+    document.removeEventListener('touchstart', playWelcomeAudio);
+    document.removeEventListener('touchend', playWelcomeAudio);
+    document.removeEventListener('keydown', playWelcomeAudio);
+  }
+
   window.addEventListener('load', playWelcomeAudio, {once:true});
+  addWelcomeAudioListeners();
   const loadingSteps = [
     [20, 'Scanning interface...'],
     [45, 'Loading modules...'],
