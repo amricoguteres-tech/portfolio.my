@@ -86,10 +86,8 @@
     .terminal-prefix{color:var(--green)}
     @keyframes terminalBlink{50%{opacity:0}}
     @keyframes loaderSpin{to{transform:rotate(360deg)}}
-    #soundToggle{position:fixed;right:18px;bottom:max(18px,env(safe-area-inset-bottom));z-index:10001;min-width:112px;height:42px;border:1px solid var(--line);border-radius:999px;background:rgba(5,9,20,.92);color:var(--text);font:600 .78rem "Space Grotesk";letter-spacing:.5px;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(8px);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-    #soundToggle[aria-pressed="true"]{border-color:var(--cyan);color:var(--cyan)}
     @media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:55px}.visual{min-height:390px}.skills-grid,.projects-grid,.certificate-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){.hero{padding-top:45px}.visual{min-height:330px}.orb{width:290px}.shield{font-size:6rem}.fc1{right:-2%}.fc2{left:-2%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.stats{gap:6px}.stat b{font-size:1.25rem}h1{letter-spacing:-2px}#soundToggle{top:max(12px,env(safe-area-inset-top));right:12px;bottom:auto}}
+    @media(max-width:600px){.hero{padding-top:45px}.visual{min-height:330px}.orb{width:290px}.shield{font-size:6rem}.fc1{right:-2%}.fc2{left:-2%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.stats{gap:6px}.stat b{font-size:1.25rem}h1{letter-spacing:-2px}}
   </style>
 </head>
 <body>
@@ -102,10 +100,9 @@
     <div class="loader-terminal" id="loaderTerminal" aria-hidden="true"></div>
   </div>
 </div>
-<audio id="welcomeAudio" preload="auto" playsinline>
+<audio id="welcomeAudio" preload="auto" autoplay playsinline>
   <source src="assets/welcome.mp3" type="audio/mpeg">
 </audio>
-<button id="soundToggle" type="button" aria-label="Matikan suara" aria-pressed="true">Sound: On</button>
 <header>
   <div class="wrap"><nav>
     <a class="brand" href="#home">◈ Anrico<b>•Dev</b></a>
@@ -211,9 +208,7 @@
   const loaderStatus = document.getElementById('loaderStatus');
   const loaderTerminal = document.getElementById('loaderTerminal');
   const welcomeAudio = document.getElementById('welcomeAudio');
-  const soundToggle = document.getElementById('soundToggle');
   welcomeAudio.volume = 0.85;
-  let soundEnabled = true;
   let typingAudioContext = null;
 
   function ensureTypingAudio() {
@@ -228,7 +223,6 @@
   }
 
   function playTypingClick() {
-    if (!soundEnabled) return;
     ensureTypingAudio();
     if (!typingAudioContext || typingAudioContext.state !== 'running') return;
 
@@ -250,37 +244,20 @@
   document.addEventListener('keydown', ensureTypingAudio, {once:true});
 
   async function playWelcomeAudio() {
-    if (!soundEnabled) return;
     try {
       welcomeAudio.muted = false;
       welcomeAudio.currentTime = 0;
       await welcomeAudio.play();
       document.removeEventListener('pointerdown', playWelcomeAudio);
       document.removeEventListener('keydown', playWelcomeAudio);
-      soundToggle.setAttribute('aria-pressed', 'true');
-      soundToggle.textContent = 'Sound: On';
     } catch (error) {
       document.addEventListener('pointerdown', playWelcomeAudio, {once:true});
       document.addEventListener('keydown', playWelcomeAudio, {once:true});
+      document.addEventListener('touchstart', playWelcomeAudio, {once:true, passive:true});
     }
   }
 
   window.addEventListener('load', playWelcomeAudio, {once:true});
-  soundToggle.addEventListener('click', () => {
-    soundEnabled = !soundEnabled;
-    welcomeAudio.muted = !soundEnabled;
-    if (soundEnabled) {
-      playWelcomeAudio();
-    } else {
-      welcomeAudio.pause();
-      if (typingAudioContext && typingAudioContext.state === 'running') {
-        typingAudioContext.suspend().catch(() => {});
-      }
-    }
-    soundToggle.setAttribute('aria-pressed', String(soundEnabled));
-    soundToggle.setAttribute('aria-label', soundEnabled ? 'Matikan suara' : 'Aktifkan suara');
-    soundToggle.textContent = soundEnabled ? 'Sound: On' : 'Sound: Off';
-  });
   const loadingSteps = [
     [20, 'Scanning interface...'],
     [45, 'Loading modules...'],
