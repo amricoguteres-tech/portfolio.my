@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050914" />
+  <meta name="description" content="Anrico Guteres — Cyber Security & Web Developer Portfolio" />
+  <title>Anrico Guteres | Cyber Security & Web Developer</title>
+  <link rel="icon" type="image/png" href="Anrico_Guteres_Profile.png" />
+  <link rel="apple-touch-icon" href="Anrico_Guteres_Profile.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#050914;--panel:rgba(9,19,38,.78);--line:rgba(50,169,255,.25);--cyan:#20d9ff;--blue:#367bff;--purple:#a855f7;--text:#eaf4ff;--muted:#91a6c5;--green:#29e6a4}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 75% 10%,#10254a 0,transparent 32%),radial-gradient(ellipse at 10% 65%,#10123a 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:linear-gradient(rgba(56,147,255,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(56,147,255,.13) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 90%);z-index:-1}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(5,9,20,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font:700 1.35rem "Space Grotesk";letter-spacing:-.7px}.brand b{color:var(--cyan)}
+    .navlinks{display:flex;gap:28px;color:#b8c8e1;font-size:.88rem}.navlinks a:hover{color:var(--cyan)}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 19px;border:1px solid var(--cyan);border-radius:8px;background:linear-gradient(110deg,rgba(32,217,255,.17),rgba(168,85,247,.13));box-shadow:0 0 24px rgba(32,217,255,.12);font-weight:700;font-size:.9rem;transition:.25s}
+    .button:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(32,217,255,.3)}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px;padding:70px 0 55px}
+    .eyebrow{color:var(--cyan);font:600 .8rem "Space Grotesk";letter-spacing:3px;text-transform:uppercase}
+    h1{font:700 clamp(3rem,7vw,5.8rem)/.98 "Space Grotesk";letter-spacing:-4px;margin:20px 0}
+    h1 span{background:linear-gradient(90deg,#fff 5%,var(--cyan) 52%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .role{font:600 clamp(1.1rem,2.4vw,1.55rem) "Space Grotesk";color:#c7d7f1;margin-bottom:18px}
+    .intro{color:var(--muted);line-height:1.85;max-width:590px;font-size:1rem}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.ghost{border-color:rgba(150,180,220,.3);background:rgba(255,255,255,.025)}
+    .terminal{margin-top:36px;max-width:550px;border:1px solid var(--line);background:rgba(3,10,23,.8);border-radius:10px;overflow:hidden;box-shadow:0 0 45px rgba(20,130,255,.1)}
+    .termbar{display:flex;align-items:center;gap:7px;padding:12px 15px;border-bottom:1px solid var(--line);color:#8299ba;font-size:.75rem}
+    .dot{width:8px;height:8px;border-radius:50%;background:#ff5e75}.dot:nth-child(2){background:#ffc45c}.dot:nth-child(3){background:#39d99b}
+    .termtext{padding:16px;font: .82rem/1.9 monospace;color:#9fb6d8}.termtext strong{color:var(--green)}
+    .visual{position:relative;min-height:480px;display:grid;place-items:center}
+    .orb{width:min(420px,85vw);aspect-ratio:1;border-radius:50%;position:relative;background:radial-gradient(circle at 50% 45%,rgba(31,103,255,.22),rgba(5,9,20,.2) 58%,transparent 70%);border:1px solid rgba(32,217,255,.28);box-shadow:0 0 65px rgba(25,129,255,.17),inset 0 0 50px rgba(32,217,255,.1);display:grid;place-items:center}
+    .orb:before,.orb:after{content:"";position:absolute;inset:22px;border:1px dashed rgba(32,217,255,.45);border-radius:50%;animation:spin 28s linear infinite}
+    .orb:after{inset:52px;border-style:solid;border-color:rgba(168,85,247,.35);animation-direction:reverse;animation-duration:18s}
+    .shield{font-size:9rem;filter:drop-shadow(0 0 22px #168cff);color:#8cecff;text-shadow:0 0 25px #168cff}
+    .profile-photo{width:68%;height:68%;object-fit:cover;border-radius:50%;border:3px solid rgba(140,236,255,.55);box-shadow:0 0 35px rgba(32,217,255,.48);position:relative;z-index:2}
+    .float-card{position:absolute;padding:13px 16px;background:rgba(6,17,35,.9);border:1px solid var(--line);border-radius:9px;box-shadow:0 0 25px rgba(32,217,255,.1);font-size:.78rem;color:#cde4ff}
+    .float-card b{display:block;color:var(--cyan);font-size:.9rem;margin-bottom:4px}.fc1{top:12%;right:-1%}.fc2{bottom:15%;left:-3%}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    section{padding:68px 0}.section-head{margin-bottom:30px}.section-head .eyebrow{margin-bottom:10px}h2{font:700 clamp(2rem,4vw,2.8rem) "Space Grotesk";margin:0;letter-spacing:-1.5px}.section-head p{color:var(--muted);line-height:1.7}
+    .grid{display:grid;gap:18px}.about-grid{grid-template-columns:1fr 1fr}.skills-grid{grid-template-columns:repeat(3,1fr)}.projects-grid{grid-template-columns:repeat(3,1fr)}
+    .card{background:linear-gradient(145deg,rgba(13,29,54,.86),rgba(5,12,27,.82));border:1px solid var(--line);border-radius:13px;padding:25px;position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;top:0;left:0;width:65px;height:2px;background:linear-gradient(90deg,var(--cyan),transparent)}
+    .card h3{font:600 1.15rem "Space Grotesk";margin:0 0 13px}.card p,.card li{color:var(--muted);font-size:.9rem;line-height:1.8}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.stat{padding:15px 8px;text-align:center;border:1px solid rgba(80,150,220,.16);border-radius:9px}.stat b{display:block;color:var(--cyan);font:700 1.6rem "Space Grotesk"}.stat small{color:var(--muted)}
+    .icon{font-size:1.7rem;margin-bottom:15px}.skill-list{list-style:none;padding:0;margin:15px 0 0}.skill-list li{padding:7px 0;border-bottom:1px solid rgba(100,150,210,.1)}.skill-list li:before{content:"▹";color:var(--cyan);margin-right:9px}
+    .project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.project-icon{width:45px;height:45px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;color:var(--cyan);font-size:1.35rem}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{font-size:.7rem;color:#8cecff;border:1px solid rgba(32,217,255,.24);border-radius:20px;padding:5px 9px;background:rgba(32,217,255,.05)}
+    .contact{display:flex;align-items:center;justify-content:space-between;gap:25px;background:linear-gradient(110deg,rgba(18,62,103,.55),rgba(52,24,89,.45));border:1px solid var(--line);padding:36px;border-radius:15px}
+    .contact-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .social-button{width:48px;height:48px;padding:0;border-radius:50%;font-size:0}
+    .social-button svg{width:23px;height:23px;fill:currentColor}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:#8297b7;font-size:.8rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .certificate-grid{grid-template-columns:repeat(3,1fr)}
+    .certificate-card{padding:10px;cursor:pointer;transition:.25s}.certificate-card:hover{transform:translateY(-6px);border-color:var(--cyan)}
+    .certificate-card img{width:100%;height:210px;object-fit:cover;display:block;border-radius:8px;background:#dfe9f4}
+    .certificate-card h3{font-size:.95rem;margin:14px 5px 5px}.certificate-card p{font-size:.78rem;margin:0 5px 6px}
+    .award-grid{grid-template-columns:repeat(2,1fr)}
+    .award-card{padding:10px;cursor:pointer;transition:.25s}.award-card:hover{transform:translateY(-6px);border-color:var(--cyan)}
+    .award-card img{width:100%;height:320px;object-fit:cover;display:block;border-radius:8px;background:#dfe9f4}
+    .award-card h3{font-size:.95rem;margin:14px 5px 5px}.award-card p{font-size:.78rem;margin:0 5px 6px}
+    .certificate-modal{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:30px;background:rgba(2,7,16,.92);backdrop-filter:blur(12px)}
+    .certificate-modal.open{display:grid}.certificate-modal img{max-width:min(1100px,92vw);max-height:88vh;border-radius:10px;border:1px solid var(--line);box-shadow:0 0 45px rgba(32,217,255,.18)}
+    .modal-close{position:absolute;top:18px;right:24px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(8,20,39,.95);color:#fff;font-size:1.5rem;cursor:pointer}
+    .reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.show{opacity:1;transform:none}
+    #loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at center,rgba(16,48,92,.8),#050914 55%);transition:opacity .65s ease,visibility .65s ease}
+    #loader.hidden{opacity:0;visibility:hidden}
+    .loader-core{text-align:center;width:min(360px,82vw)}
+    .loader-ring{width:112px;height:112px;margin:0 auto 24px;border-radius:50%;position:relative;border:1px solid rgba(32,217,255,.18);display:grid;place-items:center;box-shadow:0 0 38px rgba(32,217,255,.12)}
+    .loader-ring:before,.loader-ring:after{content:"";position:absolute;border-radius:50%;inset:10px;border:2px solid transparent;border-top-color:var(--cyan);border-right-color:var(--cyan);animation:loaderSpin 1.15s linear infinite}
+    .loader-ring:after{inset:24px;border-top-color:var(--purple);border-right-color:transparent;animation-direction:reverse;animation-duration:.8s}
+    .loader-shield{font-size:2rem;color:#9defff;text-shadow:0 0 18px var(--cyan)}
+    .loader-name{font:700 1.05rem "Space Grotesk";letter-spacing:3px;text-transform:uppercase}
+    .loader-status{margin-top:10px;color:var(--cyan);font:.75rem monospace;letter-spacing:1px}
+    .loader-bar{height:3px;margin-top:18px;background:rgba(145,166,197,.15);overflow:hidden;border-radius:4px}
+    .loader-bar span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));box-shadow:0 0 12px var(--cyan);transition:width .25s ease}
+    .loader-terminal{min-height:112px;margin-top:20px;padding:14px;text-align:left;border:1px solid rgba(32,217,255,.16);border-radius:7px;background:rgba(2,9,20,.65);font:.72rem/1.85 monospace;color:#91a6c5}
+    .loader-terminal .terminal-line{min-height:21px;white-space:nowrap}
+    .loader-terminal .terminal-line:last-child:after{content:"";display:inline-block;width:7px;height:13px;margin-left:4px;vertical-align:-2px;background:var(--cyan);animation:terminalBlink .65s step-end infinite}
+    .terminal-prefix{color:var(--green)}
+    @keyframes terminalBlink{50%{opacity:0}}
+    @keyframes loaderSpin{to{transform:rotate(360deg)}}
+    @media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:55px}.visual{min-height:390px}.skills-grid,.projects-grid,.certificate-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.hero{padding-top:45px}.visual{min-height:330px}.orb{width:290px}.shield{font-size:6rem}.fc1{right:-2%}.fc2{left:-2%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.stats{gap:6px}.stat b{font-size:1.25rem}h1{letter-spacing:-2px}}
+  </style>
+</head>
+<body>
+<div id="loader" role="status" aria-label="Memuat halaman">
+  <div class="loader-core">
+    <div class="loader-ring"><img class="loader-avatar" src="Anrico_Guteres_Profile.png" alt="Foto Anrico Guteres" style="width:62%;height:62%;object-fit:cover;border-radius:50%;border:2px solid rgba(140,236,255,.6);position:relative;z-index:2"></div>
+    <div class="loader-name">Anrico•Dev</div>
+    <div class="loader-status" id="loaderStatus">Initializing security system...</div>
+    <div class="loader-bar"><span id="loaderProgress"></span></div>
+    <div class="loader-terminal" id="loaderTerminal" aria-hidden="true"></div>
+  </div>
+</div>
+<audio id="welcomeAudio" preload="auto" playsinline>
+  <source src="assets/welcome.mp3" type="audio/mpeg">
+</audio>
+<header>
+  <div class="wrap"><nav>
+    <a class="brand" href="#home">◈ Anrico<b>•Dev</b></a>
+    <div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#awards">Awards</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></div>
+    <a class="button" href="Anrico_Guteres_Resume_20261106_184106.pdf" download="Anrico_Guteres_CV.pdf">Download CV ↓</a>
+  </nav></div>
+</header>
+<main>
+  <div class="wrap">
+    <section class="hero" id="home">
+      <div class="reveal">
+        <div class="eyebrow">Cyber security // Backend engineering</div>
+        <h1>Hello, I'm<br><span>Anrico Guteres</span></h1>
+        <div class="role">Cyber Security & Backend Developer</div>
+        <p class="intro">Saya berfokus membangun sistem backend yang aman, cepat, dan scalable. Tertarik pada application security, penetration testing secara etis, API engineering, serta infrastruktur Linux.</p>
+        <div class="actions"><a class="button" href="#projects">Explore My Work ↗</a><a class="button ghost" href="#contact">Contact Me</a><a class="button ghost" href="Anrico_Guteres_Resume_20261106_184106.pdf" download="Anrico_Guteres_CV.pdf">Download CV ↓</a></div>
+        <div class="terminal">
+          <div class="termbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span style="margin-left:7px">anrico@dev:~</span></div>
+          <div class="termtext"><span>$ whoami</span><br><strong>security-minded backend developer</strong><br><span>$ mission</span><br><strong>Build secure. Think deeply. Ship reliably.</strong></div>
+        </div>
+      </div>
+      <div class="visual reveal"><div class="orb"><img class="profile-photo" src="Anrico_Guteres_Profile.png" alt="Anrico Guteres"></div><div class="float-card fc1"><b>◈ SECURITY FIRST</b>Protecting digital assets</div><div class="float-card fc2"><b>⌘ BACKEND SYSTEMS</b>Reliable • Scalable • Secure</div></div>
+    </section>
+
+    <section id="about">
+      <div class="section-head reveal"><div class="eyebrow">01 / Who I am</div><h2>About <span style="color:var(--cyan)">Me</span></h2></div>
+      <div class="grid about-grid">
+        <article class="card reveal"><h3>Building a safer digital world.</h3><p>Saya adalah developer yang menyukai perpaduan antara keamanan siber dan rekayasa backend. Saya senang mempelajari cara kerja sistem, menemukan kelemahan secara bertanggung jawab, lalu membangun solusi yang lebih tangguh.</p><p>Portofolio ini adalah tempat untuk menampilkan proses belajar, eksperimen, dan proyek yang saya kerjakan.</p></article>
+        <article class="card reveal"><h3>Focus & mindset</h3><p>Security is not an afterthought. Keamanan, performa, dan maintainability menjadi pertimbangan sejak tahap perancangan.</p><div class="stats"><div class="stat"><b>01</b><small>Security</small></div><div class="stat"><b>02</b><small>Backend</small></div><div class="stat"><b>∞</b><small>Learning</small></div></div></article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head reveal"><div class="eyebrow">02 / What I do</div><h2>Technical <span style="color:var(--cyan)">Skills</span></h2><p>Teknologi dan area yang sedang saya tekuni.</p></div>
+      <div class="grid skills-grid">
+        <article class="card reveal"><div class="icon">⛨</div><h3>Cyber Security</h3><ul class="skill-list"><li>Web & API Security</li><li>OWASP Top 10</li><li>Linux Security</li><li>Ethical Hacking Fundamentals</li><li>Network Fundamentals</li></ul></article>
+        <article class="card reveal"><div class="icon">⌘</div><h3>Backend Development</h3><ul class="skill-list"><li>Node.js / Express</li><li>Python / FastAPI</li><li>REST API Design</li><li>Authentication & Authorization</li><li>MySQL / PostgreSQL</li></ul></article>
+        <article class="card reveal"><div class="icon">⚙</div><h3>Tools & Infrastructure</h3><ul class="skill-list"><li>Linux & Bash</li><li>Git & GitHub</li><li>Docker Fundamentals</li><li>Burp Suite / Nmap</li><li>Networking & Deployment</li></ul></article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head reveal"><div class="eyebrow">03 / Selected work</div><h2>Featured <span style="color:var(--cyan)">Projects</span></h2><p>Beberapa proyek dan karya yang telah saya kembangkan dalam bidang web, aplikasi, dan cyber security.</p></div>
+      <div class="grid projects-grid">
+        <article class="card reveal"><div class="project-top"><div class="project-icon">⌘</div><span class="eyebrow">WEB_01</span></div><h3>Hidden Web</h3><p>Website company profile untuk memperkenalkan identitas, layanan, dan informasi bisnis secara profesional.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
+        <article class="card reveal"><div class="project-top"><div class="project-icon">▤</div><span class="eyebrow">WEB_02</span></div><h3>Web Aspirasi</h3><p>Aplikasi pengaduan sekolah untuk menyampaikan aspirasi, mengelola laporan, dan mendukung komunikasi digital.</p><div class="tags"><span class="tag">Web Application</span><span class="tag">PHP</span><span class="tag">MySQL</span></div></article>
+        <article class="card reveal"><div class="project-top"><div class="project-icon">⛨</div><span class="eyebrow">CTF_03</span></div><h3>CYTOS 2</h3><p>Platform Capture The Flag yang digunakan untuk tantangan dan pembelajaran kompetisi cyber security.</p><div class="tags"><span class="tag">Cyber Security</span><span class="tag">CTF</span><span class="tag">Platform</span></div></article>
+        <article class="card reveal"><div class="project-top"><div class="project-icon">⌂</div><span class="eyebrow">IOT_04</span></div><h3>Smart Home</h3><p>Konsep antarmuka dan sistem rumah pintar untuk pengendalian perangkat dengan tampilan yang modern.</p><div class="tags"><span class="tag">IoT</span><span class="tag">Smart Home</span><span class="tag">UI/UX</span></div></article>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="section-head reveal"><div class="eyebrow">04 / Award Ceremony</div><h2>Dokumentasi <span style="color:var(--cyan)">Piala</span></h2><p>Foto penyerahan trofi dan penghargaan lomba Cyber Security.</p></div>
+      <div class="grid award-grid">
+        <article class="card award-card reveal" data-certificate="Award_LKS_Lampung_2026.jpeg" tabindex="0"><img src="Award_LKS_Lampung_2026.jpeg" alt="Penyerahan piala LKS Cyber Security Provinsi Lampung"><h3>LKS Cyber Security Lampung 2026</h3><p>Dokumentasi penyerahan trofi Juara III</p></article>
+        <article class="card award-card reveal" data-certificate="Award_ITC_TI_2026.jpeg" tabindex="0"><img src="Award_ITC_TI_2026.jpeg" alt="Penyerahan trofi dan sertifikat ITC TI 2026"><h3>ITC TI 2026</h3><p>Dokumentasi penyerahan piala dan penghargaan</p></article>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <div class="section-head reveal"><div class="eyebrow">05 / Credentials</div><h2>My <span style="color:var(--cyan)">Certificates</span></h2><p>Sertifikat pencapaian dan partisipasi di bidang cybersecurity.</p></div>
+      <div class="grid certificate-grid">
+        <article class="card certificate-card reveal" data-certificate="Certificate_ITC_TI_Juara3.jpeg" tabindex="0"><img src="Certificate_ITC_TI_Juara3.jpeg" alt="Sertifikat Juara 3 ITC TI Cyber Security 2026"><h3>ITC TI 2026 — Juara 3</h3><p>Cyber Security • 30 Juli 2026</p></article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_Lagi_Baemood_CTF.jpeg" tabindex="0"><img src="Certificate_Lagi_Baemood_CTF.jpeg" alt="Sertifikat Main CTF ITC TI 2026"><h3>Main CTF ITC TI 2026 — Juara 3</h3><p>Cyber Security • 30 Juli 2026</p></article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_KelasHack.jpeg" tabindex="0"><img src="Certificate_KelasHack.jpeg" alt="Sertifikat KelasHack Mini Bootcamp"><h3>KelasHack Mini Bootcamp CTF</h3><p>Certificate of Completion • 19 September 2026</p></article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_Polri_CTF_Peserta.jpeg" tabindex="0"><img src="Certificate_Polri_CTF_Peserta.jpeg" alt="Sertifikat peserta Polri CTF Kapolri Cup 2026"><h3>Polri CTF — Kapolri Cup 2026</h3><p>Sertifikat Peserta • 8–9 Agustus 2026</p></article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_TIMES_Indonesia.jpeg" tabindex="0"><img src="Certificate_TIMES_Indonesia.jpeg" alt="Penghargaan kerjasama TIMES Indonesia"><h3>TIMES Indonesia</h3><p>Penghargaan Kontribusi • 7 Oktober 2026</p></article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_Cyber_Frontier_2026.jpeg" tabindex="0"><img src="Certificate_Cyber_Frontier_2026.jpeg" alt="Sertifikat Cyber Frontier 2026"><h3>Cyber Frontier 2026</h3><p>Sertifikat Partisipasi CTF • 31 Oktober–1 November 2026</p></article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_LKS_Lampung_Juara3_2026.jpeg" tabindex="0"><img src="Certificate_LKS_Lampung_Juara3_2026.jpeg" alt="Piagam Juara III LKS Cyber Security Provinsi Lampung 2026"><h3>LKS Cyber Security Lampung 2026</h3><p>Juara III Provinsi • 24–25 Juni 2026</p></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact reveal">
+        <div>
+          <div class="eyebrow">06 / Get in touch</div>
+          <h2>Let's build something<br><span style="color:var(--cyan)">secure together.</span></h2>
+          <p style="color:var(--muted);line-height:1.7">Terbuka untuk kolaborasi, diskusi teknologi, dan kesempatan menarik.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button" href="mailto:amricoguteres@gmail.com">Send an Email ↗</a>
+          <a class="button ghost social-button" href="https://www.instagram.com/resss_2903?dlrf=OTR4bTVldjV0dDI1" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram Anrico Guteres" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8zm4.2 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.15-2.75a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1z"/></svg>
+          </a>
+          <a class="button ghost social-button" href="https://wa.me/6285273788038" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp Anrico Guteres" title="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.9 11.9 0 0 0 12.07 0C5.53 0 .21 5.32.21 11.86c0 2.09.55 4.13 1.59 5.93L.12 24l6.36-1.67a11.84 11.84 0 0 0 5.58 1.42h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.41-8.41zM12.07 21.7a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.77.99 1.01-3.68-.23-.38a9.85 9.85 0 0 1-1.51-5.19A9.85 9.85 0 0 1 12.07 2a9.8 9.8 0 0 1 6.98 2.89 9.81 9.81 0 0 1 2.89 6.98 9.87 9.87 0 0 1-9.87 9.83zm5.41-7.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.49.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<div class="certificate-modal" id="certificateModal" role="dialog" aria-modal="true" aria-label="Pratinjau sertifikat">
+  <button class="modal-close" id="modalClose" aria-label="Tutup">&times;</button>
+  <img id="modalCertificateImage" src="" alt="Sertifikat Anrico Guteres">
+</div>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Anrico Guteres. All rights reserved.</span><span>Secure Today · Stronger Tomorrow</span><span>Designed with ☼ & code</span></div></footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const loader = document.getElementById('loader');
+  const loaderProgress = document.getElementById('loaderProgress');
+  const loaderStatus = document.getElementById('loaderStatus');
+  const loaderTerminal = document.getElementById('loaderTerminal');
+  const welcomeAudio = document.getElementById('welcomeAudio');
+  welcomeAudio.volume = 0.85;
+  let typingAudioContext = null;
+
+  function ensureTypingAudio() {
+    if (!typingAudioContext) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      typingAudioContext = new AudioContext();
+    }
+    if (typingAudioContext.state === 'suspended') {
+      typingAudioContext.resume().catch(() => {});
+    }
+  }
+
+  function playTypingClick() {
+    ensureTypingAudio();
+    if (!typingAudioContext || typingAudioContext.state !== 'running') return;
+
+    const now = typingAudioContext.currentTime;
+    const oscillator = typingAudioContext.createOscillator();
+    const gain = typingAudioContext.createGain();
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(850 + Math.random() * 260, now);
+    oscillator.frequency.exponentialRampToValueAtTime(520, now + 0.018);
+    gain.gain.setValueAtTime(0.018, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.025);
+    oscillator.connect(gain);
+    gain.connect(typingAudioContext.destination);
+    oscillator.start(now);
+    oscillator.stop(now + 0.025);
+  }
+
+  document.addEventListener('pointerdown', ensureTypingAudio, {once:true});
+  document.addEventListener('keydown', ensureTypingAudio, {once:true});
+
+  async function playWelcomeAudio() {
+    try {
+      welcomeAudio.currentTime = 0;
+      await welcomeAudio.play();
+      document.removeEventListener('pointerdown', playWelcomeAudio);
+      document.removeEventListener('keydown', playWelcomeAudio);
+    } catch (error) {
+      document.addEventListener('pointerdown', playWelcomeAudio, {once:true});
+      document.addEventListener('keydown', playWelcomeAudio, {once:true});
+    }
+  }
+
+  window.addEventListener('load', playWelcomeAudio, {once:true});
+  const loadingSteps = [
+    [20, 'Scanning interface...'],
+    [45, 'Loading modules...'],
+    [70, 'Verifying assets...'],
+    [92, 'Establishing secure connection...'],
+    [100, 'Access granted']
+  ];
+  let loadingStep = 0;
+
+  const terminalLines = [
+    '<span class="terminal-prefix">$</span> whoami',
+    'anrico guteres',
+    '<span class="terminal-prefix">$</span> role',
+    'cyber security & web developer',
+    '<span class="terminal-prefix">$</span> initialize portfolio'
+  ];
+
+  async function typeTerminalText() {
+    for (const lineText of terminalLines) {
+      const line = document.createElement('div');
+      line.className = 'terminal-line';
+      loaderTerminal.appendChild(line);
+
+      const temporary = document.createElement('div');
+      temporary.innerHTML = lineText;
+      const prefix = temporary.querySelector('.terminal-prefix');
+      let typed = '';
+
+      if (prefix) {
+        typed = '<span class="terminal-prefix">$</span>';
+        line.innerHTML = typed;
+        await new Promise(resolve => setTimeout(resolve, 120));
+        const textAfterPrefix = temporary.textContent.replace('$ ', '');
+        typed += ' ';
+        for (const character of textAfterPrefix) {
+          line.innerHTML = typed + character;
+          typed += character;
+          playTypingClick();
+          await new Promise(resolve => setTimeout(resolve, 24));
+        }
+      } else {
+        for (const character of temporary.textContent) {
+          line.textContent += character;
+          playTypingClick();
+          await new Promise(resolve => setTimeout(resolve, 28));
+        }
+      }
+      await new Promise(resolve => setTimeout(resolve, 150));
+    }
+  }
+
+  typeTerminalText();
+
+  const loadingTimer = setInterval(() => {
+    if (loadingStep >= loadingSteps.length) return;
+    const [progress, status] = loadingSteps[loadingStep++];
+    loaderProgress.style.width = progress + '%';
+    loaderStatus.textContent = status;
+  }, 260);
+
+  function hideLoader() {
+    clearInterval(loadingTimer);
+    loaderProgress.style.width = '100%';
+    loaderStatus.textContent = 'Access granted';
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 700);
+    }, 220);
+  }
+
+  if (document.readyState === 'complete') {
+    setTimeout(hideLoader, 3900);
+  } else {
+    window.addEventListener('load', () => setTimeout(hideLoader, 3900), {once:true});
+    setTimeout(hideLoader, 5000);
+  }
+
+  const certificateModal = document.getElementById('certificateModal');
+  const modalCertificateImage = document.getElementById('modalCertificateImage');
+  const modalClose = document.getElementById('modalClose');
+
+  function closeCertificateModal() {
+    certificateModal.classList.remove('open');
+    modalCertificateImage.removeAttribute('src');
+  }
+
+  document.querySelectorAll('.certificate-card, .award-card').forEach(card => {
+    const openCertificate = () => {
+      modalCertificateImage.src = card.dataset.certificate;
+      certificateModal.classList.add('open');
+    };
+    card.addEventListener('click', openCertificate);
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') openCertificate();
+    });
+  });
+
+  modalClose.addEventListener('click', closeCertificateModal);
+  certificateModal.addEventListener('click', event => {
+    if (event.target === certificateModal) closeCertificateModal();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeCertificateModal();
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }});
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
