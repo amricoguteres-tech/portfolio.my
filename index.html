@@ -89,10 +89,10 @@
     @media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:55px}.visual{min-height:390px}.skills-grid,.projects-grid,.certificate-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:600px){.hero{padding-top:45px}.visual{min-height:330px}.orb{width:290px}.shield{font-size:6rem}.fc1{right:-2%}.fc2{left:-2%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.stats{gap:6px}.stat b{font-size:1.25rem}h1{letter-spacing:-2px}}
     .assistant-widget{position:fixed;right:24px;bottom:24px;z-index:1000;font-family:Inter,sans-serif}
-    .assistant-toggle{width:62px;height:62px;border:1px solid var(--cyan);border-radius:50%;cursor:pointer;color:#fff;background:linear-gradient(145deg,#153f72,#6d3da0);box-shadow:0 8px 35px rgba(32,217,255,.28);font-size:.7rem;font-weight:800;letter-spacing:1px}
+    .assistant-toggle{width:62px;height:62px;padding:0;border:2px solid var(--cyan);border-radius:50%;cursor:pointer;background:#101b35;box-shadow:0 8px 35px rgba(32,217,255,.28);overflow:hidden}.assistant-toggle img,.assistant-header-avatar{width:100%;height:100%;object-fit:cover}
     .assistant-panel{position:absolute;right:0;bottom:76px;width:min(370px,calc(100vw - 32px));height:min(520px,calc(100vh - 140px));display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:rgba(5,13,28,.97);box-shadow:0 18px 60px rgba(0,0,0,.55);transform-origin:bottom right;transform:scale(.95) translateY(12px);opacity:0;visibility:hidden;transition:.22s}
     .assistant-panel.open{transform:none;opacity:1;visibility:visible}
-    .assistant-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(32,217,255,.09),rgba(168,85,247,.09))}
+    .assistant-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(32,217,255,.09),rgba(168,85,247,.09))}.assistant-heading{display:flex;align-items:center;gap:10px}.assistant-header-avatar{width:42px;height:42px;border:1px solid var(--cyan);border-radius:50%;object-fit:cover}
     .assistant-title{font:700 .95rem "Space Grotesk"}.assistant-title small{display:block;margin-top:3px;color:var(--green);font:500 .68rem Inter}
     .assistant-close{border:0;background:transparent;color:var(--muted);font-size:1.4rem;cursor:pointer}
     .assistant-messages{flex:1;overflow-y:auto;padding:16px;scrollbar-width:thin}
@@ -437,7 +437,7 @@
 <aside class="assistant-widget" aria-label="MyAsistenGuteres">
   <section class="assistant-panel" id="assistantPanel" aria-hidden="true">
     <header class="assistant-header">
-      <div class="assistant-title">MyAsistenGuteres<small>● Online</small></div>
+      <div class="assistant-heading"><img class="assistant-header-avatar" src="MyAsistenGuteres.png" alt="Foto MyAsistenGuteres"><div class="assistant-title">MyAsistenGuteres<small>● Online</small></div></div>
       <button class="assistant-close" id="assistantClose" type="button" aria-label="Tutup asisten">&times;</button>
     </header>
     <div class="assistant-messages" id="assistantMessages" role="log" aria-live="polite">
@@ -448,7 +448,7 @@
       <button class="assistant-send" type="submit">Kirim</button>
     </form>
   </section>
-  <button class="assistant-toggle" id="assistantToggle" type="button" aria-label="Buka MyAsistenGuteres" aria-expanded="false">AI</button>
+  <button class="assistant-toggle" id="assistantToggle" type="button" aria-label="Buka MyAsistenGuteres" aria-expanded="false"><img src="MyAsistenGuteres.png" alt="MyAsistenGuteres"></button>
 </aside>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
