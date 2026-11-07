@@ -496,6 +496,12 @@
     <div class="assistant-messages" id="assistantMessages" role="log" aria-live="polite">
       <div class="assistant-message bot">Halo! Saya MyAsistenGuteres. Tanyakan tentang profil, skill, proyek, sertifikat, atau cara menghubungi Anrico.</div>
     </div>
+    <div class="assistant-suggestions" aria-label="Pertanyaan cepat">
+      <button class="assistant-suggestion" type="button" data-question="Skill Anrico">Skill</button>
+      <button class="assistant-suggestion" type="button" data-question="Lihat proyek">Proyek</button>
+      <button class="assistant-suggestion" type="button" data-question="Sertifikat Anrico">Sertifikat</button>
+      <button class="assistant-suggestion" type="button" data-question="Cara kontak">Kontak</button>
+    </div>
     <form class="assistant-form" id="assistantForm">
       <input class="assistant-input" id="assistantInput" type="text" autocomplete="off" placeholder="Tulis pertanyaan..." aria-label="Pesan untuk MyAsistenGuteres">
       <button class="assistant-send" type="submit">Kirim</button>
@@ -806,13 +812,27 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
   assistantToggle.addEventListener('click', () => setAssistantOpen(!assistantPanel.classList.contains('open')));
   assistantClose.addEventListener('click', () => setAssistantOpen(false));
+  function submitAssistantQuestion(question) {
+    const cleanQuestion = question.trim();
+    if (!cleanQuestion) return;
+    addAssistantMessage(cleanQuestion, 'user');
+    assistantInput.value = '';
+    const typing = document.createElement('div');
+    typing.className = 'assistant-message bot assistant-typing';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    assistantMessages.appendChild(typing);
+    assistantMessages.scrollTop = assistantMessages.scrollHeight;
+    setTimeout(() => {
+      typing.remove();
+      addAssistantMessage(answerAsMyAsistenGuteres(cleanQuestion), 'bot');
+    }, 650);
+  }
   assistantForm.addEventListener('submit', event => {
     event.preventDefault();
-    const question = assistantInput.value.trim();
-    if (!question) return;
-    addAssistantMessage(question, 'user');
-    assistantInput.value = '';
-    setTimeout(() => addAssistantMessage(answerAsMyAsistenGuteres(question), 'bot'), 280);
+    submitAssistantQuestion(assistantInput.value);
+  });
+  document.querySelectorAll('.assistant-suggestion').forEach(button => {
+    button.addEventListener('click', () => submitAssistantQuestion(button.dataset.question));
   });
 </script>
 </body>
