@@ -104,6 +104,12 @@
     .assistant-input:focus{border-color:var(--cyan)}
     .assistant-send{border:1px solid var(--cyan);border-radius:9px;padding:0 14px;background:rgba(32,217,255,.12);color:var(--cyan);cursor:pointer;font-weight:700}
     @media(max-width:600px){.assistant-widget{right:16px;bottom:16px}.assistant-toggle{width:56px;height:56px}.assistant-panel{bottom:68px}}
+    html{width:100%;overflow-x:hidden}img,svg{max-width:100%}
+    .nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:#09182f;color:var(--text);cursor:pointer;align-items:center;justify-content:center;font-size:1.35rem}
+    @media(max-width:1100px){.wrap{width:min(960px,92%)}.hero{grid-template-columns:1fr 1fr;gap:24px}.orb{width:min(370px,82vw)}h1{font-size:clamp(3rem,8vw,4.8rem)}.projects-grid,.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{gap:18px}}
+    @media(max-width:850px){nav{height:68px}.nav-toggle{display:flex}.navlinks{position:absolute;top:68px;left:4%;right:4%;display:none;flex-direction:column;gap:0;padding:8px;border:1px solid var(--line);border-radius:10px;background:#09182f;box-shadow:0 18px 40px rgba(0,0,0,.45)}.navlinks.open{display:flex}.navlinks a{padding:13px 12px;border-bottom:1px solid rgba(100,150,210,.1)}.navlinks a:last-child{border-bottom:0}nav>.button{margin-left:auto;padding:10px 12px;font-size:.78rem}.hero{min-height:auto;grid-template-columns:1fr;padding:55px 0 35px}.visual{min-height:380px}.terminal{max-width:100%}.skills-grid,.projects-grid,.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.award-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact{padding:28px}.award-card img{height:260px}}
+    @media(max-width:600px){section{padding:48px 0}.wrap{width:calc(100% - 32px)}nav{gap:10px}.brand{font-size:1.05rem}nav>.button{display:none}.hero{padding-top:40px}.hero h1{font-size:clamp(2.55rem,15vw,3.5rem);letter-spacing:-2px}.role{font-size:1rem}.intro{font-size:.92rem;line-height:1.75}.actions{display:grid;grid-template-columns:1fr}.actions .button{width:100%}.terminal{margin-top:28px}.termtext{font-size:.76rem;overflow-wrap:anywhere}.visual{min-height:320px}.orb{width:min(280px,78vw)}.shield{font-size:6rem}.profile-photo{width:64%;height:64%}.float-card{font-size:.68rem;padding:10px}.fc1{top:5%;right:-1%}.fc2{bottom:8%;left:-1%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.card{padding:20px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:12px 4px}.stat b{font-size:1.35rem}.contact{padding:22px}.contact h2{font-size:2rem}.contact-actions{width:100%}.contact-actions>.button:not(.social-button){width:100%}.certificate-card img{height:auto;max-height:220px}.award-card img{height:auto;max-height:240px}.certificate-modal{padding:12px}.certificate-modal img{width:100%;max-height:82vh;object-fit:contain}.footer-inner{flex-direction:column;text-align:center;align-items:center}.assistant-widget{right:12px;bottom:12px}.assistant-panel{right:-4px;width:min(360px,calc(100vw - 24px));max-height:calc(100dvh - 100px);height:520px}.assistant-toggle{width:56px;height:56px}}
+    @media(max-width:360px){.wrap{width:calc(100% - 24px)}.hero h1{font-size:2.35rem}.orb{width:250px}.visual{min-height:290px}.float-card{display:none}.stats{grid-template-columns:1fr}.assistant-panel{width:calc(100vw - 16px);right:-4px;height:min(500px,calc(100dvh - 90px))}.assistant-header{padding:10px}.assistant-header-avatar{width:38px;height:38px}}
   </style>
 </head>
 <body>
@@ -130,7 +136,8 @@
 <nav>
     <a class="brand" href="#home">◈ Anrico<b>•Dev</b>
 </a>
-    <div class="navlinks">
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <div class="navlinks" id="navLinks">
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
@@ -634,6 +641,21 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeCertificateModal();
   });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = '☰';
+    }));
+  }
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }});
