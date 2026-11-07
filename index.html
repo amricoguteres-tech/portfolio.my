@@ -628,7 +628,7 @@
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }});
   }, {threshold:.12});
-el(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   const assistantPanel = document.getElementById('assistantPanel');
   const assistantToggle = document.getElementById('assistantToggle');
