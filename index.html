@@ -494,16 +494,16 @@
       <button class="assistant-close" id="assistantClose" type="button" aria-label="Tutup asisten">&times;</button>
     </header>
     <div class="assistant-messages" id="assistantMessages" role="log" aria-live="polite">
-      <div class="assistant-message bot">Halo! Saya MyAsistenGuteres. Tanyakan tentang profil, skill, proyek, sertifikat, atau cara menghubungi Anrico.</div>
+      <div class="assistant-message bot">Hai! Aku MyAsistenGuteres. Mau ngobrol tentang skill, proyek, sertifikat, atau cara menghubungi Anrico?</div>
     </div>
     <div class="assistant-suggestions" aria-label="Pertanyaan cepat">
-      <button class="assistant-suggestion" type="button" data-question="Skill Anrico">Skill</button>
-      <button class="assistant-suggestion" type="button" data-question="Lihat proyek">Proyek</button>
-      <button class="assistant-suggestion" type="button" data-question="Sertifikat Anrico">Sertifikat</button>
-      <button class="assistant-suggestion" type="button" data-question="Cara kontak">Kontak</button>
+      <button class="assistant-suggestion" type="button" data-question="Skill Anrico">Skill-ku</button>
+      <button class="assistant-suggestion" type="button" data-question="Lihat proyek">Lihat karya</button>
+      <button class="assistant-suggestion" type="button" data-question="Sertifikat Anrico">Galeri sertifikat</button>
+      <button class="assistant-suggestion" type="button" data-question="Cara kontak">Ayo terhubung</button>
     </div>
     <form class="assistant-form" id="assistantForm">
-      <input class="assistant-input" id="assistantInput" type="text" autocomplete="off" placeholder="Tulis pertanyaan..." aria-label="Pesan untuk MyAsistenGuteres">
+      <input class="assistant-input" id="assistantInput" type="text" autocomplete="off" placeholder="Coba tanya apa saja..." aria-label="Pesan untuk MyAsistenGuteres">
       <button class="assistant-send" type="submit">Kirim</button>
     </form>
   </section>
@@ -800,10 +800,10 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
   function answerAsMyAsistenGuteres(question) {
     const text = question.toLowerCase();
-    if (/halo|hai|hello|hi\b/.test(text)) return 'Halo! Saya MyAsistenGuteres, siap membantu Anda mengenal profil dan karya Anrico Guteres.';
-    if (/skill|keahlian|kemampuan|bahasa/.test(text)) return 'Anrico berfokus pada Cyber Security, Web Development, backend, CTF, analisis kerentanan, serta pengembangan aplikasi yang aman dan andal.';
-    if (/proyek|project|portfolio|karya/.test(text)) return 'Anda bisa melihat bagian Projects pada halaman ini. Anrico mengerjakan proyek yang berkaitan dengan cyber security, pengembangan web, dan backend.';
-    if (/sertifikat|certificate|sertifikasi/.test(text)) return 'Sertifikat dan penghargaan tersedia pada bagian Certificates & Awards. Klik kartu untuk melihat gambar dengan tampilan lebih besar.';
+    if (/halo|hai|hello|hi\b/.test(text)) return 'Hai! Senang bertemu kamu. Aku bisa bantu mengenal skill, karya, atau prestasi Anrico.';
+    if (/skill|keahlian|kemampuan|bahasa/.test(text)) return 'Anrico nyaman mengerjakan cyber security, web development, backend, CTF, dan analisis kerentanan—semuanya dengan pendekatan yang aman dan rapi.';
+    if (/proyek|project|portfolio|karya/.test(text)) return 'Ada beberapa karya menarik yang bisa kamu jelajahi: pengembangan web, sistem backend, dashboard security, dan eksperimen CTF.';
+    if (/sertifikat|certificate|sertifikasi/.test(text)) return 'Kamu bisa lihat koleksi sertifikat dan prestasi Anrico di bagian Certificates & Awards. Cukup klik kartu untuk membukanya lebih besar.';
     if (/kontak|contact|hubungi|email|whatsapp/.test(text)) return 'Gunakan tombol WhatsApp atau Instagram pada bagian Contact. Untuk terhubung lewat email, gunakan tombol email yang tersedia di bagian tersebut.';
     if (/siapa|profil|tentang|anrico/.test(text)) return 'Anrico Guteres adalah seorang Cyber Security enthusiast dan Web Developer yang berfokus pada keamanan, performa, backend, serta pembelajaran berkelanjutan.';
     if (/cv|resume|curriculum/.test(text)) return 'CV atau resume tersedia sebagai tautan/download pada halaman portofolio. Gunakan bagian Contact atau menu utama untuk membukanya.';
