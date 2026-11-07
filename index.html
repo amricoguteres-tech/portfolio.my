@@ -167,6 +167,21 @@
     .skill-list li{opacity:0;transform:translateX(-12px)}.reveal.show .skill-list li{animation:skillIn .45s ease forwards}.reveal.show .skill-list li:nth-child(1){animation-delay:.08s}.reveal.show .skill-list li:nth-child(2){animation-delay:.16s}.reveal.show .skill-list li:nth-child(3){animation-delay:.24s}.reveal.show .skill-list li:nth-child(4){animation-delay:.32s}.reveal.show .skill-list li:nth-child(5){animation-delay:.40s}
     @keyframes profileBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}@keyframes titleShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}@keyframes navDrop{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}@keyframes skillIn{to{opacity:1;transform:none}}
     @media(max-width:900px){.cursor-light{display:none}.card:hover::after{transform:none}}@media(prefers-reduced-motion:reduce){.cursor-light{display:none}.profile-photo,.section-head.reveal h2,.hero h1,header nav{animation:none!important}.reveal,.reveal.show{filter:none!important;clip-path:none}.skill-list li{opacity:1;transform:none}}
+    /* Global silky motion system */
+    body{scroll-behavior:smooth;text-rendering:optimizeLegibility}
+    a,button,input,textarea,.card,.certificate-card,.award-card,.project-card,.tech-card,.stat,.socials a,.assistant-toggle,.assistant-panel,.assistant-message,.certificate-modal img,.modal-close{transition-timing-function:cubic-bezier(.16,1,.3,1)!important}
+    a,button,input,textarea{will-change:auto}
+    .card,.certificate-card,.award-card,.project-card,.tech-card,.stat{transition:transform .65s cubic-bezier(.16,1,.3,1),border-color .38s ease,box-shadow .38s ease,background .38s ease!important}
+    .button,.portfolio-tab,.assistant-toggle,.socials a,.navlinks a{transition:transform .38s cubic-bezier(.16,1,.3,1),color .28s ease,background .28s ease,box-shadow .38s ease!important}
+    .button:active,.portfolio-tab:active,.socials a:active{transform:scale(.96)!important}
+    .reveal{transition:opacity .95s cubic-bezier(.16,1,.3,1),filter .95s cubic-bezier(.16,1,.3,1),transform 1.05s cubic-bezier(.16,1,.3,1),clip-path 1.05s cubic-bezier(.16,1,.3,1)!important}
+    .certificate-modal.open{animation:smoothModalBackdrop .42s cubic-bezier(.16,1,.3,1)}
+    .certificate-modal.open img{animation:smoothModalImage .65s cubic-bezier(.16,1,.3,1)}
+    .assistant-panel{transition:opacity .48s cubic-bezier(.16,1,.3,1),visibility .48s,transform .48s cubic-bezier(.16,1,.3,1)!important}
+    .assistant-message{transition:opacity .35s,transform .45s cubic-bezier(.16,1,.3,1)}
+    .ripple{animation-duration:.75s!important}
+    @keyframes smoothModalBackdrop{from{opacity:0;backdrop-filter:blur(0)}to{opacity:1;backdrop-filter:blur(12px)}}
+    @keyframes smoothModalImage{from{opacity:0;transform:scale(.94) translateY(18px)}to{opacity:1;transform:none}}
 
 
     /* Vibrant assistant color system */
@@ -808,8 +823,8 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
           {opacity:0, transform:'translateY(26px) scale(.96)'},
           {opacity:1, transform:'translateY(0) scale(1)'}
         ], {
-          duration:650,
-          delay:Math.min(index * 70, 420),
+          duration:900,
+          delay:Math.min(index * 90, 540),
           easing:'cubic-bezier(.16,1,.3,1)',
           fill:'none'
         });
