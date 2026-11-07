@@ -1,6 +1,834 @@
 <!DOCTYPE html>
-<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anrico Guteres | Portfolio</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><style>
-:root{--navy:#07101f;--panel:#111c2f;--line:#263955;--blue:#4f7cff;--cyan:#79a6ff;--white:#edf4ff;--muted:#98a7bf}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--white);font-family:Inter,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}header{position:fixed;z-index:100;top:18px;width:100%;pointer-events:none}nav{pointer-events:auto;width:max-content;margin:auto;height:58px;padding:6px 18px;display:flex;align-items:center;border:1px solid rgba(133,171,226,.28);border-radius:999px;background:#111a29;box-shadow:0 12px 40px rgba(0,0,0,.35)}nav a{min-width:88px;text-align:center;padding:12px 14px;border-radius:999px;color:#aab8cc;font-size:.92rem;font-weight:700}nav a.active,nav a:hover{color:white;background:#202c40}section{min-height:100vh;padding:115px 0 70px}.hero{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:45px}.hero h1{margin:0;font-family:"Space Grotesk";font-size:clamp(4rem,7vw,7rem);line-height:.84;letter-spacing:-6px}.hero h1 span{display:block;color:#79a6ff;font-size:.82em;margin-bottom:20px;letter-spacing:-4px}.hero-role{font-size:1.35rem;color:#9fafd0;margin-top:34px}.intro{max-width:610px;margin:18px 0 28px;color:#98a7bf;font-size:.98rem;line-height:1.9}.actions{display:flex;gap:12px}.button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #3d6fe0;border-radius:10px;background:#315fc5;color:white;padding:13px 20px;font-weight:800;font-size:.88rem;transition:.2s}.button:hover{transform:translateY(-3px);background:#3d70d8}.button.ghost{border-color:#263850;background:#151f2f;color:#d3dcf1}.socials{display:flex;gap:14px;margin-top:34px;color:#8092aa;font-size:.72rem;font-weight:700;align-items:center}.socials a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#111c2d;color:#b8c6da}.profile-stage{position:relative;height:560px;display:grid;place-items:center;perspective:1000px}.lanyard{position:absolute;top:-55px;width:28px;height:230px;border-radius:8px;background:#111c2d;border:2px solid #263955;transform:rotate(4deg)}.lanyard:after{content:"";position:absolute;bottom:-18px;left:50%;width:58px;height:24px;border:7px solid #718096;border-bottom:0;border-radius:12px 12px 0 0;transform:translateX(-50%)}.nametag{position:absolute;width:330px;height:410px;transform:rotate(-4deg);background:#e8e8e2;color:#10131a;border:9px solid #f3f3ed;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.48);cursor:grab;touch-action:none;user-select:none}.nametag-top{height:72px;background:#111827;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-family:"Space Grotesk";font-weight:800}.nametag-top small{display:block;font-size:.55rem;color:#9fb2ce}.nametag-photo{width:100%;height:265px;object-fit:cover;object-position:center 18%;filter:saturate(.82)}.nametag-bottom{height:65px;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}.nametag-bottom strong{font-family:"Space Grotesk"}.nametag-bottom span{font-size:.58rem;color:#536176;font-weight:800}.section-title{text-align:center;font-family:"Space Grotesk";font-size:clamp(2rem,4vw,3.2rem);margin:0 0 36px}.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.education-card{min-height:96px;padding:22px;border:1px solid rgba(91,120,161,.12);border-radius:8px;background:#111b2d;display:flex;align-items:center;gap:16px}.edu-logo{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#172941;color:#79a6ff}.education-card strong{display:block;margin-bottom:7px}.education-card span{display:block;color:#8295b0;font-size:.82rem}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.stat{height:170px;padding:24px;border:1px solid rgba(135,166,210,.2);border-radius:14px;background:#111a2b;position:relative}.stat b{font-size:4rem;float:right}.stat-label{position:absolute;left:24px;bottom:22px}.stat-label strong,.stat-label span{display:block}.stat-label span{color:#8494aa;font-size:.72rem}.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:26px}.tab{border:0;border-radius:9px;background:#111a2b;color:#8394ad;padding:13px 20px;cursor:pointer;font-weight:800}.tab.active{background:#315fc5;color:white}.panel{display:none}.panel.active{display:grid}.tech-grid{grid-template-columns:repeat(6,1fr);gap:14px}.tech-card,.project-card,.cert-card{min-height:140px;border:1px solid rgba(121,154,201,.16);border-radius:12px;background:#111b2e;padding:20px;display:flex;align-items:center;justify-content:center;text-align:center}.tech-mark{font-size:2.2rem;font-weight:800;color:#79a6ff}.tech-card b{display:block;margin-top:12px}.project-grid,.cert-grid{grid-template-columns:repeat(3,1fr);gap:14px}.project-card,.cert-card{min-height:210px;flex-direction:column;overflow:hidden;position:relative}.project-card img,.cert-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32}.cert-card img{opacity:.65;object-fit:contain;background:white}.project-card h3,.project-card p,.cert-card strong{position:relative;z-index:2}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}.contact-card{border:1px solid rgba(121,154,201,.16);border-radius:12px;background:#111a2b;padding:28px}.contact-card h2{font-size:3rem;margin:0 0 12px}.contact-card p{color:#96a4b8;line-height:1.8}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field.full{grid-column:1/-1}label{display:block;color:#9eacc1;font-size:.78rem;margin-bottom:8px;font-weight:700}input,textarea{width:100%;border:1px solid #26374f;border-radius:7px;background:#0b1424;color:white;padding:13px}textarea{height:100px}.assistant{position:fixed;right:20px;bottom:20px;z-index:200}.assistant-toggle{width:58px;height:58px;border-radius:50%;border:1px solid #3d6fe0;background:#315fc5;padding:0;overflow:hidden}.assistant-toggle img{width:100%;height:100%;object-fit:cover}.assistant-panel{position:absolute;right:0;bottom:72px;width:min(380px,calc(100vw - 32px));height:500px;border:1px solid #263955;border-radius:15px;background:#0d1728;display:none;overflow:hidden;flex-direction:column}.assistant-panel.open{display:flex}.assistant-head{height:68px;padding:12px 14px;border-bottom:1px solid #263955;display:flex;align-items:center;gap:10px}.assistant-head img{width:42px;height:42px;border-radius:50%}.assistant-messages{flex:1;padding:14px;overflow:auto}.message{max-width:82%;padding:10px 12px;border-radius:10px;margin:8px 0;font-size:.82rem;background:#18243a}.message.user{margin-left:auto;background:#315fc5}.assistant-input{height:64px;border-top:1px solid #263955;padding:9px;display:flex}.assistant-input button{width:46px;border:0;border-radius:8px;background:#315fc5;color:white}footer{padding:30px;text-align:center;color:#7f8da2;border-top:1px solid rgba(121,154,201,.1)}.reveal{opacity:0;transform:translateY(24px);transition:.75s}.reveal.show{opacity:1;transform:none}@media(max-width:900px){.wrap{width:min(680px,calc(100% - 32px))}.hero{grid-template-columns:1fr}.hero h1{font-size:clamp(3.2rem,13vw,5rem)}.profile-stage{height:470px}.nametag{width:280px;height:350px}.nametag-photo{height:215px}.education-grid{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(3,1fr)}.project-grid,.cert-grid{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}nav{width:calc(100% - 24px)}nav a{min-width:0;flex:1}}@media(max-width:600px){header{top:10px}.wrap{width:calc(100% - 24px)}nav{height:52px;padding:5px 7px}nav a{font-size:.76rem;padding:10px 6px}.hero{padding-top:95px}.hero h1{font-size:3.35rem;letter-spacing:-3px}.profile-stage{height:400px}.nametag{width:220px;height:300px}.nametag-photo{height:180px}.lanyard{height:160px;top:-20px}.stats{grid-template-columns:1fr}.stat{height:130px}.tabs{overflow:auto;justify-content:flex-start}.tab{white-space:nowrap}.tech-grid{grid-template-columns:repeat(2,1fr)}.project-grid,.cert-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.contact-card h2{font-size:2rem}}
-</style></head><body><canvas id="stars"></canvas><header><nav><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a></nav></header><main><section class="hero wrap" id="home"><div class="reveal"><h1><span>Welcome to</span>My Portfolio</h1><div class="hero-role">Cyber Security &amp; Backend Developer</div><p class="intro">Saya membangun sistem backend yang aman, cepat, dan scalable. Berfokus pada application security, penetration testing, API engineering, serta infrastruktur Linux.</p><div class="actions"><a class="button" href="#portfolio">Lihat Proyek →</a><a class="button ghost" href="#contact">Hubungi Saya ↗</a></div><div class="socials"><span>FIND ME</span><a href="https://github.com/amricoguteres-tech" target="_blank">GH</a><a href="https://www.instagram.com/" target="_blank">IG</a><a href="mailto:anrico@example.com">@</a></div></div><div class="profile-stage reveal"><div class="lanyard"></div><article class="nametag" id="profileNametag"><div class="nametag-top"><div><small>JUNIOR</small>DEVELOPER</div><span>AG-2026</span></div><img class="nametag-photo" src="Anrico_Guteres_Profile.png" alt="Anrico Guteres"><div class="nametag-bottom"><div><strong>Anrico Guteres</strong><br><span>CYBER SECURITY</span></div><b>#01</b></div></article></div></section><section class="wrap" id="about"><div class="section-title reveal">Education</div><div class="education-grid reveal"><article class="education-card"><div class="edu-logo">⌘</div><div><strong>SMK Negeri 1 Lampung Tengah</strong><span>Sistem Informasi Jaringan &amp; Aplikasi</span><span>2023 - 2026</span></div></article><article class="education-card"><div class="edu-logo">⛨</div><div><strong>LKS Cyber Security Lampung</strong><span>Kompetisi Keamanan Siber</span><span>2026</span></div></article></div><div class="stats reveal"><article class="stat"><b>4</b><div class="stat-label"><strong>PROJECTS</strong><span>Karya yang dibangun</span></div></article><article class="stat"><b>3</b><div class="stat-label"><strong>CERTIFICATES</strong><span>Sertifikasi</span></div></article><article class="stat"><b>2</b><div class="stat-label"><strong>AWARDS</strong><span>Prestasi kompetisi</span></div></article></div></section><section class="wrap" id="portfolio"><div class="section-title reveal">Portfolio</div><div class="tabs reveal"><button class="tab" data-panel="projects">⌘ Projects</button><button class="tab" data-panel="certificates">◎ Certificates</button><button class="tab" data-panel="achievements">♕ Achievements</button><button class="tab active" data-panel="tech">▣ Tech Stack</button></div><div class="panel project-grid" id="projects"><article class="project-card"><img src="Portofolio Developer Futuristik Neon Cyberpunk.png"><h3>Portfolio Website</h3><p>HTML / CSS / JS</p></article><article class="project-card"><img src="Poster Teknologi Biru Putih.png"><h3>Security Dashboard</h3><p>Monitoring</p></article><article class="project-card"><img src="Poster jasa teknologi Hidden Web Natar.png"><h3>Backend System</h3><p>API / Linux</p></article></div><div class="panel cert-grid" id="certificates"><article class="cert-card"><img src="Certificate_Intro_CyberSecurity_2026.jpeg"><strong>Introduction to Cyber Security</strong></article><article class="cert-card"><img src="Certificate_Cyber_Frontier_2026.jpeg"><strong>Cyber Frontier 2026</strong></article><article class="cert-card"><img src="Certificate_KelasHack.jpeg"><strong>Cyber Security Learning</strong></article></div><div class="panel cert-grid" id="achievements"><article class="cert-card"><img src="Award_LKS_Lampung_2026.jpeg"><strong>LKS Lampung 2026</strong></article><article class="cert-card"><img src="Award_ITC_TI_2026.jpeg"><strong>ITC TI 2026</strong></article><article class="cert-card"><img src="Certificate_ITC_TI_Juara3.jpeg"><strong>ITC TI - 3rd Place</strong></article></div><div class="panel tech-grid active" id="tech"><article class="tech-card"><div><div class="tech-mark">JS</div><b>JavaScript</b></div></article><article class="tech-card"><div><div class="tech-mark">5</div><b>HTML5</b></div></article><article class="tech-card"><div><div class="tech-mark">#</div><b>CSS3</b></div></article><article class="tech-card"><div><div class="tech-mark">Py</div><b>Python</b></div></article><article class="tech-card"><div><div class="tech-mark">DB</div><b>MySQL</b></div></article><article class="tech-card"><div><div class="tech-mark">⌘</div><b>Git</b></div></article><article class="tech-card"><div><div class="tech-mark">LIN</div><b>Linux</b></div></article><article class="tech-card"><div><div class="tech-mark">API</div><b>REST API</b></div></article><article class="tech-card"><div><div class="tech-mark">PHP</div><b>PHP</b></div></article><article class="tech-card"><div><div class="tech-mark">NG</div><b>Nginx</b></div></article><article class="tech-card"><div><div class="tech-mark">CTF</div><b>CTF</b></div></article><article class="tech-card"><div><div class="tech-mark">SOC</div><b>Security</b></div></article></div></section><section class="wrap" id="contact"><div class="section-title reveal">Hubungi Saya</div><div class="contact-grid reveal"><article class="contact-card"><h2>Contact</h2><p>Ingin berdiskusi tentang keamanan aplikasi atau kolaborasi proyek?</p><a class="button" href="Anrico_Guteres_CV.pdf" download>Download CV ↓</a></article><form class="contact-card" id="contactForm"><div class="form-grid"><div class="field"><label>Nama</label><input required></div><div class="field"><label>Email</label><input type="email" required></div><div class="field full"><label>Pesan</label><textarea required></textarea></div></div><button class="button" style="width:100%;margin-top:14px">Kirim Pesan →</button></form></div></section></main><footer>© 2026 Anrico Guteres. Built with HTML &amp; JavaScript.</footer><aside class="assistant"><div class="assistant-panel" id="assistantPanel"><div class="assistant-head"><img src="MyAsistenGuteres.png" alt=""><strong>MyAsistenGuteres</strong></div><div class="assistant-messages" id="assistantMessages"><div class="message">Halo! Saya MyAsistenGuteres. Tanya saya tentang profil, skill, proyek, sertifikat, atau CV Anrico.</div></div><div class="assistant-input"><input id="assistantInput" placeholder="Ketik pesan..."><button id="assistantSend">➤</button></div></div><button class="assistant-toggle" id="assistantToggle"><img src="MyAsistenGuteres.png"></button></aside><script>
-const canvas=document.getElementById('stars'),ctx=canvas.getContext('2d');let stars=[];function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);stars=Array.from({length:180},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()+.2,a:Math.random()*.6+.12,s:Math.random()*.01+.003}))}function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const s of stars){s.a+=s.s;if(s.a>.75||s.a<.12)s.s=-s.s;ctx.globalAlpha=s.a;ctx.fillStyle='#b8d2ff';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}resize();addEventListener('resize',resize);draw();const observer=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));document.querySelectorAll('.tab').forEach(tab=>tab.onclick=()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.dataset.panel).classList.add('active')});const card=document.getElementById('profileNametag');let drag=false,sx=0,sy=0,x=0,y=0;card.onpointerdown=e=>{drag=true;sx=e.clientX-x;sy=e.clientY-y;card.setPointerCapture(e.pointerId)};card.onpointermove=e=>{if(!drag)return;x=Math.max(-90,Math.min(90,e.clientX-sx));y=Math.max(-65,Math.min(65,e.clientY-sy));card.style.transform=`translate(${x}px,${y}px) rotate(${x/16-4}deg)`};card.onpointerup=()=>drag=false;const panel=document.getElementById('assistantPanel');document.getElementById('assistantToggle').onclick=()=>panel.classList.toggle('open');const input=document.getElementById('assistantInput'),messages=document.getElementById('assistantMessages');function reply(q){q=q.toLowerCase();if(q.includes('skill'))return'Anrico menguasai Python, JavaScript, HTML/CSS, Linux, SQL, dan keamanan aplikasi.';if(q.includes('sertifikat'))return'Sertifikat Anrico tersedia pada bagian Certificates.';if(q.includes('proyek'))return'Proyek Anrico mencakup portfolio, dashboard security, backend, dan CTF.';if(q.includes('cv'))return'CV tersedia lewat tombol Download CV.';return'Tanyakan tentang profil, skill, proyek, sertifikat, atau CV Anrico.'}function send(){const t=input.value.trim();if(!t)return;messages.insertAdjacentHTML('beforeend',`<div class="message user">${t}</div>`);input.value='';setTimeout(()=>{messages.insertAdjacentHTML('beforeend',`<div class="message">${reply(t)}</div>`);messages.scrollTop=messages.scrollHeight},300)}document.getElementById('assistantSend').onclick=send;input.onkeydown=e=>{if(e.key==='Enter')send()};document.getElementById('contactForm').onsubmit=e=>{e.preventDefault();e.target.querySelector('button').textContent='Pesan Siap Dikirim ✓'};
-</script></body></html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050914" />
+  <meta name="description" content="Anrico Guteres — Cyber Security & Web Developer Portfolio" />
+  <title>Anrico Guteres | Cyber Security & Web Developer</title>
+  <link rel="icon" type="image/png" href="Anrico_Guteres_Profile.png" />
+  <link rel="apple-touch-icon" href="Anrico_Guteres_Profile.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#050914;--panel:rgba(9,19,38,.78);--line:rgba(50,169,255,.25);--cyan:#20d9ff;--blue:#367bff;--purple:#a855f7;--text:#eaf4ff;--muted:#91a6c5;--green:#29e6a4}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:#07101f;color:var(--text);font-family:Inter,sans-serif;overflow-x:hidden}
+    body:before{display:none}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(5,9,20,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font:700 1.35rem "Space Grotesk";letter-spacing:-.7px}.brand b{color:var(--cyan)}
+    .navlinks{display:flex;gap:28px;color:#b8c8e1;font-size:.88rem}.navlinks a:hover{color:var(--cyan)}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 19px;border:1px solid var(--cyan);border-radius:8px;background:rgba(12,39,66,.95);box-shadow:0 0 24px rgba(32,217,255,.12);font-weight:700;font-size:.9rem;transition:.25s}
+    .button:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(32,217,255,.3)}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px;padding:70px 0 55px}
+    .eyebrow{color:var(--cyan);font:600 .8rem "Space Grotesk";letter-spacing:3px;text-transform:uppercase}
+    h1{font:700 clamp(3rem,7vw,5.8rem)/.98 "Space Grotesk";letter-spacing:-4px;margin:20px 0}
+    h1 span{background:none;color:var(--cyan)}
+    .role{font:600 clamp(1.1rem,2.4vw,1.55rem) "Space Grotesk";color:#c7d7f1;margin-bottom:18px}
+    .intro{color:var(--muted);line-height:1.85;max-width:590px;font-size:1rem}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.ghost{border-color:rgba(150,180,220,.3);background:rgba(255,255,255,.025)}
+    .terminal{margin-top:36px;max-width:550px;border:1px solid var(--line);background:rgba(3,10,23,.8);border-radius:10px;overflow:hidden;box-shadow:0 0 45px rgba(20,130,255,.1)}
+    .termbar{display:flex;align-items:center;gap:7px;padding:12px 15px;border-bottom:1px solid var(--line);color:#8299ba;font-size:.75rem}
+    .dot{width:8px;height:8px;border-radius:50%;background:#ff5e75}.dot:nth-child(2){background:#ffc45c}.dot:nth-child(3){background:#39d99b}
+    .termtext{padding:16px;font: .82rem/1.9 monospace;color:#9fb6d8}.termtext strong{color:var(--green)}
+    .visual{position:relative;min-height:480px;display:grid;place-items:center}
+    .orb{width:390px;height:430px;position:relative;border-radius:18px;background:transparent;border:0;box-shadow:none;display:grid;place-items:center}
+    .shield{font-size:9rem;filter:drop-shadow(0 0 22px #168cff);color:#8cecff;text-shadow:0 0 25px #168cff}
+    .profile-photo{width:68%;height:68%;object-fit:cover;border-radius:50%;border:3px solid rgba(140,236,255,.55);box-shadow:0 0 35px rgba(32,217,255,.48);position:relative;z-index:2}
+    .float-card{position:absolute;padding:13px 16px;background:rgba(6,17,35,.9);border:1px solid var(--line);border-radius:9px;box-shadow:0 0 25px rgba(32,217,255,.1);font-size:.78rem;color:#cde4ff}
+    .float-card b{display:block;color:var(--cyan);font-size:.9rem;margin-bottom:4px}.fc1{top:12%;right:-1%}.fc2{bottom:15%;left:-3%}.nametag{width:220px;height:292px}.nametag-photo{height:212px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    section{padding:68px 0}.section-head{margin-bottom:30px}.section-head .eyebrow{margin-bottom:10px}h2{font:700 clamp(2rem,4vw,2.8rem) "Space Grotesk";margin:0;letter-spacing:-1.5px}.section-head p{color:var(--muted);line-height:1.7}
+    .grid{display:grid;gap:18px}.about-grid{grid-template-columns:1fr 1fr}.skills-grid{grid-template-columns:repeat(3,1fr)}.projects-grid{grid-template-columns:repeat(3,1fr)}
+    .card{background:rgba(8,22,43,.96);border:1px solid var(--line);border-radius:13px;padding:25px;position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;top:0;left:0;width:65px;height:2px;background:var(--cyan)}
+    .card h3{font:600 1.15rem "Space Grotesk";margin:0 0 13px}.card p,.card li{color:var(--muted);font-size:.9rem;line-height:1.8}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.stat{padding:15px 8px;text-align:center;border:1px solid rgba(80,150,220,.16);border-radius:9px}.stat b{display:block;color:var(--cyan);font:700 1.6rem "Space Grotesk"}.stat small{color:var(--muted)}
+    .icon{font-size:1.7rem;margin-bottom:15px}.skill-list{list-style:none;padding:0;margin:15px 0 0}.skill-list li{padding:7px 0;border-bottom:1px solid rgba(100,150,210,.1)}.skill-list li:before{content:"▹";color:var(--cyan);margin-right:9px}
+    .project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.project-icon{width:45px;height:45px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;color:var(--cyan);font-size:1.35rem}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{font-size:.7rem;color:#8cecff;border:1px solid rgba(32,217,255,.24);border-radius:20px;padding:5px 9px;background:rgba(32,217,255,.05)}
+    .contact{display:flex;align-items:center;justify-content:space-between;gap:25px;background:rgba(10,38,68,.96);border:1px solid var(--line);padding:36px;border-radius:15px}
+    .contact-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .social-button{width:48px;height:48px;padding:0;border-radius:50%;font-size:0}
+    .social-button svg{width:23px;height:23px;fill:currentColor}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:#8297b7;font-size:.8rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .certificate-grid{grid-template-columns:repeat(3,1fr)}
+    .certificate-card{padding:10px;cursor:pointer;transition:.25s}.certificate-card:hover{transform:translateY(-6px);border-color:var(--cyan)}
+    .certificate-card img{width:100%;height:210px;object-fit:cover;display:block;border-radius:8px;background:#dfe9f4}
+    .certificate-card h3{font-size:.95rem;margin:14px 5px 5px}.certificate-card p{font-size:.78rem;margin:0 5px 6px}
+    .award-grid{grid-template-columns:repeat(2,1fr)}
+    .award-card{padding:10px;cursor:pointer;transition:.25s}.award-card:hover{transform:translateY(-6px);border-color:var(--cyan)}
+    .award-card img{width:100%;height:320px;object-fit:cover;display:block;border-radius:8px;background:#dfe9f4}
+    .award-card h3{font-size:.95rem;margin:14px 5px 5px}.award-card p{font-size:.78rem;margin:0 5px 6px}
+    .certificate-modal{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:30px;background:rgba(2,7,16,.92);backdrop-filter:blur(12px)}
+    .certificate-modal.open{display:grid}.certificate-modal img{max-width:min(1100px,92vw);max-height:88vh;border-radius:10px;border:1px solid var(--line);box-shadow:0 0 45px rgba(32,217,255,.18)}
+    .modal-close{position:absolute;top:18px;right:24px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(8,20,39,.95);color:#fff;font-size:1.5rem;cursor:pointer}
+    .reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.show{opacity:1;transform:none}
+    #loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#050914;transition:opacity .65s ease,visibility .65s ease}
+    #loader.hidden{opacity:0;visibility:hidden}
+    .loader-core{text-align:center;width:min(360px,82vw)}
+    .loader-ring{width:112px;height:112px;margin:0 auto 24px;border-radius:50%;position:relative;border:1px solid rgba(32,217,255,.18);display:grid;place-items:center;box-shadow:0 0 38px rgba(32,217,255,.12)}
+    .loader-ring:before,.loader-ring:after{content:"";position:absolute;border-radius:50%;inset:10px;border:2px solid transparent;border-top-color:var(--cyan);border-right-color:var(--cyan);animation:loaderSpin 1.15s linear infinite}
+    .loader-ring:after{inset:24px;border-top-color:var(--purple);border-right-color:transparent;animation-direction:reverse;animation-duration:.8s}
+    .loader-shield{font-size:2rem;color:#9defff;text-shadow:0 0 18px var(--cyan)}
+    .loader-name{font:700 1.05rem "Space Grotesk";letter-spacing:3px;text-transform:uppercase}
+    .loader-status{margin-top:10px;color:var(--cyan);font:.75rem monospace;letter-spacing:1px}
+    .loader-bar{height:3px;margin-top:18px;background:rgba(145,166,197,.15);overflow:hidden;border-radius:4px}
+    .loader-bar span{display:block;width:0;height:100%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);transition:width .25s ease}
+    .loader-terminal{min-height:112px;margin-top:20px;padding:14px;text-align:left;border:1px solid rgba(32,217,255,.16);border-radius:7px;background:rgba(2,9,20,.65);font:.72rem/1.85 monospace;color:#91a6c5}
+    .loader-terminal .terminal-line{min-height:21px;white-space:nowrap}
+    .loader-terminal .terminal-line:last-child:after{content:"";display:inline-block;width:7px;height:13px;margin-left:4px;vertical-align:-2px;background:var(--cyan);animation:terminalBlink .65s step-end infinite}
+    .terminal-prefix{color:var(--green)}
+    @keyframes terminalBlink{50%{opacity:0}}
+    @keyframes loaderSpin{to{transform:rotate(360deg)}}
+    @media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:55px}.visual{min-height:390px}.skills-grid,.projects-grid,.certificate-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.hero{padding-top:45px}.visual{min-height:330px}.orb{width:290px}.shield{font-size:6rem}.fc1{right:-2%}.fc2{left:-2%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}.stats{gap:6px}.stat b{font-size:1.25rem}h1{letter-spacing:-2px}}
+    .assistant-widget{position:fixed;right:24px;bottom:24px;z-index:1000;font-family:Inter,sans-serif}
+    .assistant-toggle{width:62px;height:62px;padding:0;border:2px solid var(--cyan);border-radius:50%;cursor:pointer;background:#101b35;box-shadow:0 8px 35px rgba(32,217,255,.28);overflow:hidden}.assistant-toggle img,.assistant-header-avatar{width:100%;height:100%;object-fit:cover}
+    .assistant-panel{position:absolute;right:0;bottom:76px;width:min(370px,calc(100vw - 32px));height:min(520px,calc(100vh - 140px));display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:rgba(5,13,28,.97);box-shadow:0 18px 60px rgba(0,0,0,.55);transform-origin:bottom right;transform:scale(.95) translateY(12px);opacity:0;visibility:hidden;transition:.22s}
+    .assistant-panel.open{transform:none;opacity:1;visibility:visible}
+    .assistant-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(9,31,55,.98)}.assistant-heading{display:flex;align-items:center;gap:10px}.assistant-header-avatar{width:42px;height:42px;border:1px solid var(--cyan);border-radius:50%;object-fit:cover}
+    .assistant-title{font:700 .95rem "Space Grotesk"}.assistant-title small{display:block;margin-top:3px;color:var(--green);font:500 .68rem Inter}
+    .assistant-close{border:0;background:transparent;color:var(--muted);font-size:1.4rem;cursor:pointer}
+    .assistant-messages{flex:1;overflow-y:auto;padding:16px;scrollbar-width:thin}
+    .assistant-message{max-width:86%;margin-bottom:10px;padding:10px 12px;border-radius:12px;font-size:.82rem;line-height:1.55;word-break:break-word}
+    .assistant-message.bot{border:1px solid rgba(32,217,255,.16);border-bottom-left-radius:3px;background:rgba(32,217,255,.07);color:#d6e7f8}
+    .assistant-message.user{margin-left:auto;border-bottom-right-radius:3px;background:#183b62;color:white}
+    .assistant-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+    .assistant-input{min-width:0;flex:1;border:1px solid rgba(111,159,210,.28);border-radius:9px;padding:10px 12px;background:rgba(255,255,255,.04);color:white;font:inherit;font-size:.82rem;outline:none}
+    .assistant-input:focus{border-color:var(--cyan)}
+    .assistant-send{border:1px solid var(--cyan);border-radius:9px;padding:0 14px;background:rgba(32,217,255,.12);color:var(--cyan);cursor:pointer;font-weight:700}
+    @media(max-width:600px){.assistant-widget{right:16px;bottom:16px}.assistant-toggle{width:56px;height:56px}.assistant-panel{bottom:68px}}
+    html{width:100%;overflow-x:hidden}img,svg{max-width:100%}
+    .nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:#09182f;color:var(--text);cursor:pointer;align-items:center;justify-content:center;font-size:1.35rem}
+    @media(max-width:1100px){.wrap{width:min(960px,92%)}.hero{grid-template-columns:1fr 1fr;gap:24px}.orb{width:min(370px,82vw)}h1{font-size:clamp(3rem,8vw,4.8rem)}.projects-grid,.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{gap:18px}}
+    @media(max-width:850px){nav{height:68px}.nav-toggle{display:flex}.navlinks{position:absolute;top:68px;left:4%;right:4%;display:none;flex-direction:column;gap:0;padding:8px;border:1px solid var(--line);border-radius:10px;background:#09182f;box-shadow:0 18px 40px rgba(0,0,0,.45)}.navlinks.open{display:flex}.navlinks a{padding:13px 12px;border-bottom:1px solid rgba(100,150,210,.1)}.navlinks a:last-child{border-bottom:0}nav>.button{margin-left:auto;padding:10px 12px;font-size:.78rem}.hero{min-height:auto;grid-template-columns:1fr;padding:55px 0 35px}.visual{min-height:380px}.terminal{max-width:100%}.skills-grid,.projects-grid,.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.award-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact{padding:28px}.award-card img{height:260px}}
+    @media(max-width:600px){section{padding:48px 0}.wrap{width:calc(100% - 32px)}nav{gap:10px}.brand{font-size:1.05rem}nav>.button{display:none}.hero{padding-top:40px}.hero h1{font-size:clamp(2.55rem,15vw,3.5rem);letter-spacing:-2px}.role{font-size:1rem}.intro{font-size:.92rem;line-height:1.75}.actions{display:grid;grid-template-columns:1fr}.actions .button{width:100%}.terminal{margin-top:28px}.termtext{font-size:.76rem;overflow-wrap:anywhere}.visual{min-height:320px}.orb{width:min(280px,78vw)}.shield{font-size:6rem}.profile-photo{width:64%;height:64%}.nametag{width:188px;height:252px}.nametag-photo{height:170px}.nametag-info{padding:7px 9px}.nametag-info strong{font-size:.78rem}.nametag-bar{height:34px;font-size:.58rem}.drag-tip{bottom:1%}.float-card{font-size:.68rem;padding:10px}.fc1{top:5%;right:-1%}.fc2{bottom:8%;left:-1%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.card{padding:20px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:12px 4px}.stat b{font-size:1.35rem}.contact{padding:22px}.contact h2{font-size:2rem}.contact-actions{width:100%}.contact-actions>.button:not(.social-button){width:100%}.certificate-card img{height:auto;max-height:220px}.award-card img{height:auto;max-height:240px}.certificate-modal{padding:12px}.certificate-modal img{width:100%;max-height:82vh;object-fit:contain}.footer-inner{flex-direction:column;text-align:center;align-items:center}.assistant-widget{right:12px;bottom:12px}.assistant-panel{right:-4px;width:min(360px,calc(100vw - 24px));max-height:calc(100dvh - 100px);height:520px}.assistant-toggle{width:56px;height:56px}}
+    @media(max-width:360px){.wrap{width:calc(100% - 24px)}.hero h1{font-size:2.35rem}.orb{width:250px}.visual{min-height:290px}.float-card{display:none}.stats{grid-template-columns:1fr}.assistant-panel{width:calc(100vw - 16px);right:-4px;height:min(500px,calc(100dvh - 90px))}.assistant-header{padding:10px}.assistant-header-avatar{width:38px;height:38px}}
+    .profile-photo{display:none}
+    .orb{width:390px;height:430px;aspect-ratio:auto;border-radius:18px;border:0;background:transparent;box-shadow:none;overflow:visible}
+    .orb:before,.orb:after{display:none}
+    .nametag{width:230px;height:320px;border-radius:10px;transform:translate(0,0) rotate(-8deg);overflow:visible}
+    .nametag-bar{border-radius:10px 10px 0 0;height:42px}
+    .nametag-photo{height:225px;border-radius:0}
+    .nametag-info{border-radius:0 0 10px 10px;height:53px}
+    .nametag-strap{z-index:-1;top:-168px;width:26px;height:190px;border-radius:8px;transform:translateX(-50%) rotate(-8deg);border-color:rgba(32,217,255,.75);background:#123558}
+    .nametag-handle{top:50px}
+    .drag-tip{bottom:-18px;background:rgba(7,16,31,.92)}
+
+    .orb{position:relative;border-radius:18px;border:0;background:transparent;box-shadow:none;overflow:visible;display:grid;place-items:center}
+    .orb:before,.orb:after{display:none}
+    .nametag{position:relative;z-index:5;width:230px;height:320px;border:1px solid rgba(32,217,255,.72);border-radius:10px;background:#09182f;box-shadow:0 22px 45px rgba(0,0,0,.48),0 0 26px rgba(32,217,255,.18);overflow:visible;cursor:grab;touch-action:none;user-select:none;transform:translate(0,0) rotate(-8deg);transition:box-shadow .2s ease;will-change:transform}
+    .nametag:active{cursor:grabbing;box-shadow:0 28px 55px rgba(0,0,0,.58),0 0 34px rgba(32,217,255,.32)}
+    .nametag-strap{position:absolute;z-index:-1;width:26px;height:190px;top:-168px;left:50%;transform:translateX(-50%) rotate(-8deg);border-radius:8px;border:2px solid rgba(32,217,255,.75);background:#123558}
+    .nametag-bar{height:42px;display:flex;align-items:center;justify-content:center;border-radius:10px 10px 0 0;background:#0d3a60;border-bottom:1px solid rgba(32,217,255,.48);font:700 .68rem "Space Grotesk";letter-spacing:2px;color:#bceeff;text-transform:uppercase}
+    .nametag-photo{display:block;width:100%;height:225px;object-fit:cover;object-position:center 18%;border-bottom:1px solid rgba(32,217,255,.5)}
+    .nametag-info{height:53px;min-height:53px;padding:8px 12px;border-radius:0 0 10px 10px;background:#07101f}.nametag-info strong{display:block;font:700 .9rem "Space Grotesk";letter-spacing:.3px;color:#fff}.nametag-info span{display:block;margin-top:2px;color:var(--green);font:.62rem monospace;letter-spacing:1px}
+    .nametag-handle{position:absolute;right:10px;top:50px;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:-12px 0 0 rgba(32,217,255,.45),12px 0 0 rgba(32,217,255,.45);opacity:.75}
+    .drag-tip{position:absolute;z-index:8;bottom:-18px;left:50%;transform:translateX(-50%);padding:6px 10px;border:1px solid rgba(32,217,255,.25);border-radius:20px;background:#07101f;color:#a7bdd6;font:.62rem "Inter";white-space:nowrap;pointer-events:none}
+        .scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;z-index:9998;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+    .ambient-glow{position:fixed;width:280px;height:280px;z-index:-1;pointer-events:none;border-radius:50%;background:#123a68;opacity:.18;filter:blur(70px);transform:translate(-50%,-50%)}
+    .hero .eyebrow{animation:eyebrowIn .8s ease both}.hero h1{animation:titleIn .9s cubic-bezier(.2,.8,.2,1) both .12s}.hero .role{animation:titleIn .8s ease both .28s}.hero .intro,.hero .actions,.hero .terminal{animation:titleIn .85s ease both}.hero .intro{animation-delay:.38s}.hero .actions{animation-delay:.48s}.hero .terminal{animation-delay:.58s}
+    .visual .orb{animation:orbFloat 5s ease-in-out infinite}.float-card{animation:cardFloat 4s ease-in-out infinite}.fc2{animation-delay:-2s}
+    .card{transition:transform .18s ease,border-color .25s ease,box-shadow .25s ease;transform-style:preserve-3d}.card.motion-card:hover{border-color:rgba(32,217,255,.65);box-shadow:0 18px 45px rgba(0,0,0,.38),0 0 24px rgba(32,217,255,.09)}
+    .reveal{transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1)}.reveal:nth-of-type(2){transition-delay:.08s}.reveal:nth-of-type(3){transition-delay:.16s}
+    .button{position:relative;overflow:hidden}.button .ripple{position:absolute;width:12px;height:12px;border-radius:50%;background:#9cecff;pointer-events:none;transform:scale(0);animation:ripple .55s ease-out}
+    .assistant-toggle{animation:assistantPulse 2.6s ease-in-out infinite}.assistant-toggle:hover{animation:none;transform:scale(1.06)}
+    .certificate-card,.award-card{isolation:isolate}.certificate-card img,.award-card img{transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease}.certificate-card:hover img,.award-card:hover img{transform:scale(1.035);filter:saturate(1.08) contrast(1.04)}
+    @keyframes titleIn{from{opacity:0;transform:translateY(28px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+    @keyframes eyebrowIn{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+    @keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes assistantPulse{0%,100%{box-shadow:0 8px 35px rgba(32,217,255,.28)}50%{box-shadow:0 8px 42px rgba(32,217,255,.52),0 0 0 8px rgba(32,217,255,.06)}}
+    @keyframes ripple{to{transform:scale(14);opacity:0}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.card{transform:none!important}}
+      @media(max-width:1100px){.orb{width:350px;height:410px}}
+    @media(max-width:850px){.orb{width:min(390px,88vw);height:430px}}
+    @media(max-width:600px){.orb{width:min(300px,84vw);height:340px}.nametag{width:190px;height:270px}.nametag-photo{height:180px}.nametag-info{height:48px}.nametag-strap{top:-138px;height:155px}.drag-tip{bottom:-12px}}
+  </style>
+</head>
+<body>
+<div id="loader" role="status" aria-label="Memuat halaman">
+  <div class="loader-core">
+    <div class="loader-ring">
+<img class="loader-avatar" src="Anrico_Guteres_Profile.png" alt="Foto Anrico Guteres" style="width:62%;height:62%;object-fit:cover;border-radius:50%;border:2px solid rgba(140,236,255,.6);position:relative;z-index:2">
+</div>
+    <div class="loader-name">Anrico•Dev</div>
+    <div class="loader-status" id="loaderStatus">Initializing security system...</div>
+    <div class="loader-bar">
+<span id="loaderProgress">
+</span>
+</div>
+    <div class="loader-terminal" id="loaderTerminal" aria-hidden="true">
+</div>
+  </div>
+</div>
+<audio id="welcomeAudio" preload="auto" autoplay playsinline>
+  <source src="assets/welcome.mp3" type="audio/mpeg">
+</audio>
+<header>
+  <div class="wrap">
+<nav>
+    <a class="brand" href="#home">◈ Anrico<b>•Dev</b>
+</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <div class="navlinks" id="navLinks">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#awards">Awards</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
+</div>
+    <a class="button" href="Anrico_Guteres_Resume_20261106_184106.pdf" download="Anrico_Guteres_CV.pdf">Download CV ↓</a>
+  </nav>
+</div>
+</header>
+<main>
+  <div class="wrap">
+    <section class="hero" id="home">
+      <div class="reveal">
+        <div class="eyebrow">Cyber security // Backend engineering</div>
+        <h1>Hello, I'm<br>
+<span>Anrico Guteres</span>
+</h1>
+        <div class="role">Cyber Security & Backend Developer</div>
+        <p class="intro">Saya berfokus membangun sistem backend yang aman, cepat, dan scalable. Tertarik pada application security, penetration testing secara etis, API engineering, serta infrastruktur Linux.</p>
+        <div class="actions">
+<a class="button" href="#projects">Explore My Work ↗</a>
+<a class="button ghost" href="#contact">Contact Me</a>
+<a class="button ghost" href="Anrico_Guteres_Resume_20261106_184106.pdf" download="Anrico_Guteres_CV.pdf">Download CV ↓</a>
+</div>
+        <div class="terminal">
+          <div class="termbar">
+<i class="dot">
+</i>
+<i class="dot">
+</i>
+<i class="dot">
+</i>
+<span style="margin-left:7px">anrico@dev:~</span>
+</div>
+          <div class="termtext">
+<span>$ whoami</span>
+<br>
+<strong>security-minded backend developer</strong>
+<br>
+<span>$ mission</span>
+<br>
+<strong>Build secure. Think deeply. Ship reliably.</strong>
+</div>
+        </div>
+      </div>
+      <div class="visual reveal">
+<div class="orb">
+<div class="nametag" id="profileNametag" role="img" aria-label="Nametag Anrico Guteres">
+<div class="nametag-strap"></div>
+<div class="nametag-bar">ANRICO • DEV</div>
+<img class="nametag-photo" src="Anrico_Guteres_Profile.png" alt="Foto Anrico Guteres">
+<div class="nametag-info"><strong>Anrico Guteres</strong><span>CYBER SECURITY</span></div>
+<span class="nametag-handle" aria-hidden="true"></span>
+</div>
+<div class="drag-tip">↔ TARIK NAMETAG</div>
+</div>
+<div class="float-card fc1">
+<b>◈ SECURITY FIRST</b>Protecting digital assets</div>
+<div class="float-card fc2">
+<b>⌘ BACKEND SYSTEMS</b>Reliable • Scalable • Secure</div>
+</div>
+    </section>
+
+    <section id="about">
+      <div class="section-head reveal">
+<div class="eyebrow">01 / Who I am</div>
+<h2>About <span style="color:var(--cyan)">Me</span>
+</h2>
+</div>
+      <div class="grid about-grid">
+        <article class="card reveal">
+<h3>Building a safer digital world.</h3>
+<p>Saya adalah developer yang menyukai perpaduan antara keamanan siber dan rekayasa backend. Saya senang mempelajari cara kerja sistem, menemukan kelemahan secara bertanggung jawab, lalu membangun solusi yang lebih tangguh.</p>
+<p>Portofolio ini adalah tempat untuk menampilkan proses belajar, eksperimen, dan proyek yang saya kerjakan.</p>
+</article>
+        <article class="card reveal">
+<h3>Focus & mindset</h3>
+<p>Security is not an afterthought. Keamanan, performa, dan maintainability menjadi pertimbangan sejak tahap perancangan.</p>
+<div class="stats">
+<div class="stat">
+<b>01</b>
+<small>Security</small>
+</div>
+<div class="stat">
+<b>02</b>
+<small>Backend</small>
+</div>
+<div class="stat">
+<b>∞</b>
+<small>Learning</small>
+</div>
+</div>
+</article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head reveal">
+<div class="eyebrow">02 / What I do</div>
+<h2>Technical <span style="color:var(--cyan)">Skills</span>
+</h2>
+<p>Teknologi dan area yang sedang saya tekuni.</p>
+</div>
+      <div class="grid skills-grid">
+        <article class="card reveal">
+<div class="icon">⛨</div>
+<h3>Cyber Security</h3>
+<ul class="skill-list">
+<li>Web & API Security</li>
+<li>OWASP Top 10</li>
+<li>Linux Security</li>
+<li>Ethical Hacking Fundamentals</li>
+<li>Network Fundamentals</li>
+</ul>
+</article>
+        <article class="card reveal">
+<div class="icon">⌘</div>
+<h3>Backend Development</h3>
+<ul class="skill-list">
+<li>Node.js / Express</li>
+<li>Python / FastAPI</li>
+<li>REST API Design</li>
+<li>Authentication & Authorization</li>
+<li>MySQL / PostgreSQL</li>
+</ul>
+</article>
+        <article class="card reveal">
+<div class="icon">⚙</div>
+<h3>Tools & Infrastructure</h3>
+<ul class="skill-list">
+<li>Linux & Bash</li>
+<li>Git & GitHub</li>
+<li>Docker Fundamentals</li>
+<li>Burp Suite / Nmap</li>
+<li>Networking & Deployment</li>
+</ul>
+</article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head reveal">
+<div class="eyebrow">03 / Selected work</div>
+<h2>Featured <span style="color:var(--cyan)">Projects</span>
+</h2>
+<p>Beberapa proyek dan karya yang telah saya kembangkan dalam bidang web, aplikasi, dan cyber security.</p>
+</div>
+      <div class="grid projects-grid">
+        <article class="card reveal">
+<div class="project-top">
+<div class="project-icon">⌘</div>
+<span class="eyebrow">WEB_01</span>
+</div>
+<h3>Hidden Web</h3>
+<p>Website company profile untuk memperkenalkan identitas, layanan, dan informasi bisnis secara profesional.</p>
+<div class="tags">
+<span class="tag">HTML</span>
+<span class="tag">CSS</span>
+<span class="tag">JavaScript</span>
+</div>
+</article>
+        <article class="card reveal">
+<div class="project-top">
+<div class="project-icon">▤</div>
+<span class="eyebrow">WEB_02</span>
+</div>
+<h3>Web Aspirasi</h3>
+<p>Aplikasi pengaduan sekolah untuk menyampaikan aspirasi, mengelola laporan, dan mendukung komunikasi digital.</p>
+<div class="tags">
+<span class="tag">Web Application</span>
+<span class="tag">PHP</span>
+<span class="tag">MySQL</span>
+</div>
+</article>
+        <article class="card reveal">
+<div class="project-top">
+<div class="project-icon">⛨</div>
+<span class="eyebrow">CTF_03</span>
+</div>
+<h3>CYTOS 2</h3>
+<p>Platform Capture The Flag yang digunakan untuk tantangan dan pembelajaran kompetisi cyber security.</p>
+<div class="tags">
+<span class="tag">Cyber Security</span>
+<span class="tag">CTF</span>
+<span class="tag">Platform</span>
+</div>
+</article>
+        <article class="card reveal">
+<div class="project-top">
+<div class="project-icon">⌂</div>
+<span class="eyebrow">IOT_04</span>
+</div>
+<h3>Smart Home</h3>
+<p>Konsep antarmuka dan sistem rumah pintar untuk pengendalian perangkat dengan tampilan yang modern.</p>
+<div class="tags">
+<span class="tag">IoT</span>
+<span class="tag">Smart Home</span>
+<span class="tag">UI/UX</span>
+</div>
+</article>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="section-head reveal">
+<div class="eyebrow">04 / Award Ceremony</div>
+<h2>Dokumentasi <span style="color:var(--cyan)">Piala</span>
+</h2>
+<p>Foto penyerahan trofi dan penghargaan lomba Cyber Security.</p>
+</div>
+      <div class="grid award-grid">
+        <article class="card award-card reveal" data-certificate="Award_LKS_Lampung_2026.jpeg" tabindex="0">
+<img src="Award_LKS_Lampung_2026.jpeg" alt="Penyerahan piala LKS Cyber Security Provinsi Lampung">
+<h3>LKS Cyber Security Lampung 2026</h3>
+<p>Dokumentasi penyerahan trofi Juara III</p>
+</article>
+        <article class="card award-card reveal" data-certificate="Award_ITC_TI_2026.jpeg" tabindex="0">
+<img src="Award_ITC_TI_2026.jpeg" alt="Penyerahan trofi dan sertifikat ITC TI 2026">
+<h3>ITC TI 2026</h3>
+<p>Dokumentasi penyerahan piala dan penghargaan</p>
+</article>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <div class="section-head reveal">
+<div class="eyebrow">05 / Credentials</div>
+<h2>My <span style="color:var(--cyan)">Certificates</span>
+</h2>
+<p>Sertifikat pencapaian dan partisipasi di bidang cybersecurity.</p>
+</div>
+      <div class="grid certificate-grid">
+        <article class="card certificate-card reveal" data-certificate="Certificate_Intro_CyberSecurity_2026.jpeg" tabindex="0">
+<img src="Certificate_Intro_CyberSecurity_2026.jpeg" alt="Sertifikat Introduction to Cyber Security and Career Awareness">
+<h3>Introduction to Cyber Security</h3>
+<p>Digital Talent Scholarship Micro Skill • 13 April 2026</p>
+</article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_ITC_TI_Juara3.jpeg" tabindex="0">
+<img src="Certificate_ITC_TI_Juara3.jpeg" alt="Sertifikat Juara 3 ITC TI Cyber Security 2026">
+<h3>ITC TI 2026 — Juara 3</h3>
+<p>Cyber Security • 30 Juli 2026</p>
+</article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_Lagi_Baemood_CTF.jpeg" tabindex="0">
+<img src="Certificate_Lagi_Baemood_CTF.jpeg" alt="Sertifikat Main CTF ITC TI 2026">
+<h3>Main CTF ITC TI 2026 — Juara 3</h3>
+<p>Cyber Security • 30 Juli 2026</p>
+</article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_KelasHack.jpeg" tabindex="0">
+<img src="Certificate_KelasHack.jpeg" alt="Sertifikat KelasHack Mini Bootcamp">
+<h3>KelasHack Mini Bootcamp CTF</h3>
+<p>Certificate of Completion • 19 September 2026</p>
+</article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_Polri_CTF_Peserta.jpeg" tabindex="0">
+<img src="Certificate_Polri_CTF_Peserta.jpeg" alt="Sertifikat peserta Polri CTF Kapolri Cup 2026">
+<h3>Polri CTF — Kapolri Cup 2026</h3>
+<p>Sertifikat Peserta • 8–9 Agustus 2026</p>
+</article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_TIMES_Indonesia.jpeg" tabindex="0">
+<img src="Certificate_TIMES_Indonesia.jpeg" alt="Penghargaan kerjasama TIMES Indonesia">
+<h3>TIMES Indonesia</h3>
+<p>Penghargaan Kontribusi • 7 Oktober 2026</p>
+</article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_Cyber_Frontier_2026.jpeg" tabindex="0">
+<img src="Certificate_Cyber_Frontier_2026.jpeg" alt="Sertifikat Cyber Frontier 2026">
+<h3>Cyber Frontier 2026</h3>
+<p>Sertifikat Partisipasi CTF • 31 Oktober–1 November 2026</p>
+</article>
+        <article class="card certificate-card reveal" data-certificate="Certificate_LKS_Lampung_Juara3_2026.jpeg" tabindex="0">
+<img src="Certificate_LKS_Lampung_Juara3_2026.jpeg" alt="Piagam Juara III LKS Cyber Security Provinsi Lampung 2026">
+<h3>LKS Cyber Security Lampung 2026</h3>
+<p>Juara III Provinsi • 24–25 Juni 2026</p>
+</article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact reveal">
+        <div>
+          <div class="eyebrow">06 / Get in touch</div>
+          <h2>Let's build something<br>
+<span style="color:var(--cyan)">secure together.</span>
+</h2>
+          <p style="color:var(--muted);line-height:1.7">Terbuka untuk kolaborasi, diskusi teknologi, dan kesempatan menarik.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button" href="mailto:amricoguteres@gmail.com">Send an Email ↗</a>
+          <a class="button ghost social-button" href="https://github.com/amricoguteres-tech" target="_blank" rel="noopener noreferrer" aria-label="Buka GitHub Anrico Guteres" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.82-.26.82-.58v-2.24c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.74.08-.74 1.21.09 1.85 1.24 1.85 1.24 1.08 1.84 2.82 1.31 3.51 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.6c1.03 0 2.05.14 3.01.41 2.29-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .5z"/>
+</svg>
+          </a>
+          <a class="button ghost social-button" href="https://www.instagram.com/resss_2903?dlrf=OTR4bTVldjV0dDI1" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram Anrico Guteres" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8zm4.2 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.15-2.75a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1z"/>
+</svg>
+          </a>
+          <a class="button ghost social-button" href="https://wa.me/6285273788038" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp Anrico Guteres" title="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M20.52 3.48A11.9 11.9 0 0 0 12.07 0C5.53 0 .21 5.32.21 11.86c0 2.09.55 4.13 1.59 5.93L.12 24l6.36-1.67a11.84 11.84 0 0 0 5.58 1.42h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.41-8.41zM12.07 21.7a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.77.99 1.01-3.68-.23-.38a9.85 9.85 0 0 1-1.51-5.19A9.85 9.85 0 0 1 12.07 2a9.8 9.8 0 0 1 6.98 2.89 9.81 9.81 0 0 1 2.89 6.98 9.87 9.87 0 0 1-9.87 9.83zm5.41-7.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.49.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35z"/>
+</svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<div class="certificate-modal" id="certificateModal" role="dialog" aria-modal="true" aria-label="Pratinjau sertifikat">
+  <button class="modal-close" id="modalClose" aria-label="Tutup">&times;</button>
+  <img id="modalCertificateImage" src="" alt="Sertifikat Anrico Guteres">
+</div>
+<footer>
+<div class="wrap footer-inner">
+<span>© <span id="year">
+</span> Anrico Guteres. All rights reserved.</span>
+<span>Secure Today · Stronger Tomorrow</span>
+<span>Designed with ☼ & code</span>
+</div>
+</footer>
+<aside class="assistant-widget" aria-label="MyAsistenGuteres">
+  <section class="assistant-panel" id="assistantPanel" aria-hidden="true">
+    <header class="assistant-header">
+      <div class="assistant-heading"><img class="assistant-header-avatar" src="MyAsistenGuteres.png" alt="Foto MyAsistenGuteres"><div class="assistant-title">MyAsistenGuteres<small>● Online</small></div></div>
+      <button class="assistant-close" id="assistantClose" type="button" aria-label="Tutup asisten">&times;</button>
+    </header>
+    <div class="assistant-messages" id="assistantMessages" role="log" aria-live="polite">
+      <div class="assistant-message bot">Halo! Saya MyAsistenGuteres. Tanyakan tentang profil, skill, proyek, sertifikat, atau cara menghubungi Anrico.</div>
+    </div>
+    <form class="assistant-form" id="assistantForm">
+      <input class="assistant-input" id="assistantInput" type="text" autocomplete="off" placeholder="Tulis pertanyaan..." aria-label="Pesan untuk MyAsistenGuteres">
+      <button class="assistant-send" type="submit">Kirim</button>
+    </form>
+  </section>
+  <button class="assistant-toggle" id="assistantToggle" type="button" aria-label="Buka MyAsistenGuteres" aria-expanded="false"><img src="MyAsistenGuteres.png" alt="MyAsistenGuteres"></button>
+</aside>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const loader = document.getElementById('loader');
+  const loaderProgress = document.getElementById('loaderProgress');
+  const loaderStatus = document.getElementById('loaderStatus');
+  const loaderTerminal = document.getElementById('loaderTerminal');
+  const welcomeAudio = document.getElementById('welcomeAudio');
+  welcomeAudio.volume = 0.85;
+  let typingAudioContext = null;
+
+  function ensureTypingAudio() {
+    if (!typingAudioContext) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      typingAudioContext = new AudioContext();
+    }
+    if (typingAudioContext.state === 'suspended') {
+      typingAudioContext.resume().catch(() => {});
+    }
+  }
+
+  function playTypingClick() {
+    ensureTypingAudio();
+    if (!typingAudioContext || typingAudioContext.state !== 'running') return;
+
+    const now = typingAudioContext.currentTime;
+    const oscillator = typingAudioContext.createOscillator();
+    const gain = typingAudioContext.createGain();
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(850 + Math.random() * 260, now);
+    oscillator.frequency.exponentialRampToValueAtTime(520, now + 0.018);
+    gain.gain.setValueAtTime(0.018, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.025);
+    oscillator.connect(gain);
+    gain.connect(typingAudioContext.destination);
+    oscillator.start(now);
+    oscillator.stop(now + 0.025);
+  }
+
+  document.addEventListener('pointerdown', ensureTypingAudio, {once:true});
+  document.addEventListener('keydown', ensureTypingAudio, {once:true});
+
+  async function playWelcomeAudio() {
+    try {
+      welcomeAudio.muted = false;
+      welcomeAudio.currentTime = 0;
+      await welcomeAudio.play();
+      removeWelcomeAudioListeners();
+    } catch (error) {
+      addWelcomeAudioListeners();
+    }
+  }
+
+  function addWelcomeAudioListeners() {
+    document.addEventListener('pointerdown', playWelcomeAudio, {once:true});
+    document.addEventListener('touchstart', playWelcomeAudio, {once:true, passive:true});
+    document.addEventListener('touchend', playWelcomeAudio, {once:true, passive:true});
+    document.addEventListener('keydown', playWelcomeAudio, {once:true});
+  }
+
+  function removeWelcomeAudioListeners() {
+    document.removeEventListener('pointerdown', playWelcomeAudio);
+    document.removeEventListener('touchstart', playWelcomeAudio);
+    document.removeEventListener('touchend', playWelcomeAudio);
+    document.removeEventListener('keydown', playWelcomeAudio);
+  }
+
+  window.addEventListener('load', playWelcomeAudio, {once:true});
+  addWelcomeAudioListeners();
+  const loadingSteps = [
+    [20, 'Scanning interface...'],
+    [45, 'Loading modules...'],
+    [70, 'Verifying assets...'],
+    [92, 'Establishing secure connection...'],
+    [100, 'Access granted']
+  ];
+  let loadingStep = 0;
+
+  const terminalLines = [
+    '<span class="terminal-prefix">$</span> whoami',
+    'anrico guteres',
+    '<span class="terminal-prefix">$</span> role',
+    'cyber security & web developer',
+    '<span class="terminal-prefix">$</span> initialize portfolio'
+  ];
+
+  async function typeTerminalText() {
+    for (const lineText of terminalLines) {
+      const line = document.createElement('div');
+      line.className = 'terminal-line';
+      loaderTerminal.appendChild(line);
+
+      const temporary = document.createElement('div');
+      temporary.innerHTML = lineText;
+      const prefix = temporary.querySelector('.terminal-prefix');
+      let typed = '';
+
+      if (prefix) {
+        typed = '<span class="terminal-prefix">$</span>';
+        line.innerHTML = typed;
+        await new Promise(resolve => setTimeout(resolve, 120));
+        const textAfterPrefix = temporary.textContent.replace('$ ', '');
+        typed += ' ';
+        for (const character of textAfterPrefix) {
+          line.innerHTML = typed + character;
+          typed += character;
+          playTypingClick();
+          await new Promise(resolve => setTimeout(resolve, 24));
+        }
+      } else {
+        for (const character of temporary.textContent) {
+          line.textContent += character;
+          playTypingClick();
+          await new Promise(resolve => setTimeout(resolve, 28));
+        }
+      }
+      await new Promise(resolve => setTimeout(resolve, 150));
+    }
+  }
+
+  typeTerminalText();
+
+  const loadingTimer = setInterval(() => {
+    if (loadingStep >= loadingSteps.length) return;
+    const [progress, status] = loadingSteps[loadingStep++];
+    loaderProgress.style.width = progress + '%';
+    loaderStatus.textContent = status;
+  }, 260);
+
+  function hideLoader() {
+    clearInterval(loadingTimer);
+    loaderProgress.style.width = '100%';
+    loaderStatus.textContent = 'Access granted';
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 700);
+    }, 220);
+  }
+
+  if (document.readyState === 'complete') {
+    setTimeout(hideLoader, 3900);
+  } else {
+    window.addEventListener('load', () => setTimeout(hideLoader, 3900), {once:true});
+    setTimeout(hideLoader, 5000);
+  }
+
+  const certificateModal = document.getElementById('certificateModal');
+  const modalCertificateImage = document.getElementById('modalCertificateImage');
+  const modalClose = document.getElementById('modalClose');
+
+  function closeCertificateModal() {
+    certificateModal.classList.remove('open');
+    modalCertificateImage.removeAttribute('src');
+  }
+
+  document.querySelectorAll('.certificate-card, .award-card').forEach(card => {
+    const openCertificate = () => {
+      modalCertificateImage.src = card.dataset.certificate;
+      certificateModal.classList.add('open');
+    };
+    card.addEventListener('click', openCertificate);
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') openCertificate();
+    });
+  });
+
+  modalClose.addEventListener('click', closeCertificateModal);
+  certificateModal.addEventListener('click', event => {
+    if (event.target === certificateModal) closeCertificateModal();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeCertificateModal();
+  });
+
+  const profileNametag = document.getElementById('profileNametag');
+  if (profileNametag && window.matchMedia('(prefers-reduced-motion: reduce)').matches === false) {
+    let dragging = false;
+    let activeX = 0;
+    let activeY = 0;
+    let startX = 0;
+    let startY = 0;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    function moveNametag(clientX, clientY) {
+      const nextX = offsetX + clientX - startX;
+      const nextY = offsetY + clientY - startY;
+      activeX = Math.max(-90, Math.min(90, nextX));
+      activeY = Math.max(-55, Math.min(75, nextY));
+      profileNametag.style.transform = `translate(${activeX}px, ${activeY}px) rotate(${activeX / 18 - 8}deg)`;
+    }
+
+    profileNametag.addEventListener('pointerdown', event => {
+      dragging = true;
+      startX = event.clientX;
+      startY = event.clientY;
+      offsetX = activeX;
+      offsetY = activeY;
+      profileNametag.setPointerCapture(event.pointerId);
+    });
+    profileNametag.addEventListener('pointermove', event => {
+      if (dragging) moveNametag(event.clientX, event.clientY);
+    });
+    profileNametag.addEventListener('pointerup', event => {
+      dragging = false;
+      if (profileNametag.hasPointerCapture(event.pointerId)) profileNametag.releasePointerCapture(event.pointerId);
+    });
+    profileNametag.addEventListener('pointercancel', () => { dragging = false; });
+  }
+
+  const scrollProgress = document.createElement('div');
+  scrollProgress.className = 'scroll-progress';
+  document.body.appendChild(scrollProgress);
+  const ambientGlow = document.createElement('div');
+  ambientGlow.className = 'ambient-glow';
+  document.body.appendChild(ambientGlow);
+
+  function updateScrollProgress() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    scrollProgress.style.width = progress + '%';
+  }
+  window.addEventListener('scroll', updateScrollProgress, {passive:true});
+  updateScrollProgress();
+
+  if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('pointermove', event => {
+      ambientGlow.style.left = event.clientX + 'px';
+      ambientGlow.style.top = event.clientY + 'px';
+    }, {passive:true});
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.add('motion-card');
+      card.addEventListener('pointermove', event => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        card.style.transform = `perspective(900px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg) translateY(-3px)`;
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+  }
+
+  document.querySelectorAll('.button').forEach(button => {
+    button.addEventListener('pointerdown', event => {
+      const rect = button.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.left = (event.clientX - rect.left - 6) + 'px';
+      ripple.style.top = (event.clientY - rect.top - 6) + 'px';
+      button.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = '☰';
+    }));
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }});
+  }, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const assistantPanel = document.getElementById('assistantPanel');
+  const assistantToggle = document.getElementById('assistantToggle');
+  const assistantClose = document.getElementById('assistantClose');
+  const assistantForm = document.getElementById('assistantForm');
+  const assistantInput = document.getElementById('assistantInput');
+  const assistantMessages = document.getElementById('assistantMessages');
+  function setAssistantOpen(open) {
+    assistantPanel.classList.toggle('open', open);
+    assistantPanel.setAttribute('aria-hidden', String(!open));
+    assistantToggle.setAttribute('aria-expanded', String(open));
+    if (open) setTimeout(() => assistantInput.focus(), 220);
+  }
+  function addAssistantMessage(text, sender) {
+    const message = document.createElement('div');
+    message.className = `assistant-message ${sender}`;
+    message.textContent = text;
+    assistantMessages.appendChild(message);
+    assistantMessages.scrollTop = assistantMessages.scrollHeight;
+  }
+  function answerAsMyAsistenGuteres(question) {
+    const text = question.toLowerCase();
+    if (/halo|hai|hello|hi\b/.test(text)) return 'Halo! Saya MyAsistenGuteres, siap membantu Anda mengenal profil dan karya Anrico Guteres.';
+    if (/skill|keahlian|kemampuan|bahasa/.test(text)) return 'Anrico berfokus pada Cyber Security, Web Development, backend, CTF, analisis kerentanan, serta pengembangan aplikasi yang aman dan andal.';
+    if (/proyek|project|portfolio|karya/.test(text)) return 'Anda bisa melihat bagian Projects pada halaman ini. Anrico mengerjakan proyek yang berkaitan dengan cyber security, pengembangan web, dan backend.';
+    if (/sertifikat|certificate|sertifikasi/.test(text)) return 'Sertifikat dan penghargaan tersedia pada bagian Certificates & Awards. Klik kartu untuk melihat gambar dengan tampilan lebih besar.';
+    if (/kontak|contact|hubungi|email|whatsapp/.test(text)) return 'Gunakan tombol WhatsApp atau Instagram pada bagian Contact. Untuk terhubung lewat email, gunakan tombol email yang tersedia di bagian tersebut.';
+    if (/siapa|profil|tentang|anrico/.test(text)) return 'Anrico Guteres adalah seorang Cyber Security enthusiast dan Web Developer yang berfokus pada keamanan, performa, backend, serta pembelajaran berkelanjutan.';
+    if (/cv|resume|curriculum/.test(text)) return 'CV atau resume tersedia sebagai tautan/download pada halaman portofolio. Gunakan bagian Contact atau menu utama untuk membukanya.';
+    if (/terima kasih|makasih/.test(text)) return 'Sama-sama! Jika ada pertanyaan lain tentang Anrico, saya siap membantu.';
+    return 'Saya belum memiliki jawaban khusus untuk pertanyaan itu. Coba tanyakan tentang profil, skill, proyek, sertifikat, CV, atau cara kontak Anrico.';
+  }
+  assistantToggle.addEventListener('click', () => setAssistantOpen(!assistantPanel.classList.contains('open')));
+  assistantClose.addEventListener('click', () => setAssistantOpen(false));
+  assistantForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const question = assistantInput.value.trim();
+    if (!question) return;
+    addAssistantMessage(question, 'user');
+    assistantInput.value = '';
+    setTimeout(() => addAssistantMessage(answerAsMyAsistenGuteres(question), 'bot'), 280);
+  });
+</script>
+</body>
+</html>
