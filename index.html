@@ -144,6 +144,13 @@
     .identity-hint.hide{opacity:0;transform:translate(-50%,8px)}
     @media(max-width:600px){.identity-flip.flipped{width:82%;border-radius:10px}.identity-hint{bottom:4%;font-size:.62rem}}
     @media(prefers-reduced-motion:reduce){.identity-flip{transition-duration:.01ms!important}}
+    .orb.identity-open{overflow:visible!important}
+    .orb.identity-open:before,.orb.identity-open:after{opacity:.18}
+    .identity-flip:not(.flipped) .identity-front{visibility:visible;pointer-events:auto}
+    .identity-flip:not(.flipped) .identity-back{visibility:hidden;pointer-events:none}
+    .identity-flip.flipped .identity-front{visibility:hidden;pointer-events:none}
+    .identity-flip.flipped .identity-back{visibility:visible;pointer-events:auto}
+    .identity-front .profile-photo{object-position:center 18%!important;box-shadow:0 12px 38px rgba(32,217,255,.34)!important}
     /* Premium motion layer */
     .cursor-light{position:fixed;width:280px;height:280px;border-radius:50%;z-index:-1;pointer-events:none;opacity:.35;background:radial-gradient(circle,rgba(112,167,255,.18),rgba(112,167,255,.07) 32%,transparent 68%);transform:translate(-50%,-50%);will-change:left,top}
     .orb{transform-style:preserve-3d;will-change:transform}.profile-photo{animation:profileBreath 6s ease-in-out infinite;will-change:transform,filter}.float-card{transform-style:preserve-3d;will-change:transform}
@@ -872,6 +879,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     if (!card) return;
     const toggleCard = () => {
       const flipped = card.classList.toggle('flipped');
+      card.closest('.orb')?.classList.toggle('identity-open', flipped);
       card.setAttribute('aria-pressed', String(flipped));
       card.setAttribute('aria-label', flipped ? 'Klik dua kali untuk menutup kartu tanda pengenal' : 'Klik dua kali untuk membuka kartu tanda pengenal Anrico Guteres');
       if (hint) hint.classList.add('hide');
