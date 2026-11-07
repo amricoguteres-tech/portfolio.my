@@ -146,7 +146,17 @@
     @keyframes profileBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}@keyframes titleShimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}@keyframes navDrop{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}@keyframes skillIn{to{opacity:1;transform:none}}
     @media(max-width:900px){.cursor-light{display:none}.card:hover::after{transform:none}}@media(prefers-reduced-motion:reduce){.cursor-light{display:none}.profile-photo,.section-head.reveal h2,.hero h1,header nav{animation:none!important}.reveal,.reveal.show{filter:none!important;clip-path:none}.skill-list li{opacity:1;transform:none}}
 
-  </style>
+
+    /* Vibrant assistant color system */
+    .assistant-panel{background:linear-gradient(145deg,rgba(18,35,71,.98),rgba(27,16,56,.98) 55%,rgba(7,23,42,.98))!important;border-color:rgba(129,105,255,.38)!important;box-shadow:0 24px 90px rgba(0,0,0,.72),0 0 36px rgba(107,91,255,.12)!important}
+    .assistant-header{background:linear-gradient(90deg,rgba(107,91,255,.28),rgba(46,196,182,.09),transparent)!important;border-bottom-color:rgba(129,105,255,.22)!important}
+    .assistant-title{color:#b8a9ff!important}.assistant-title small{color:#67edc1!important}.assistant-header-avatar{border-color:#9c8cff!important;box-shadow:0 0 24px rgba(156,140,255,.38)!important}.assistant-header:after{color:#67edc1!important}
+    .assistant-messages{background-image:radial-gradient(circle at 20% 0%,rgba(156,140,255,.16),transparent 38%),radial-gradient(circle at 85% 100%,rgba(46,196,182,.08),transparent 35%)}
+    .assistant-message.bot{color:#c8e7ef!important;border-color:rgba(103,237,193,.22)!important;background:linear-gradient(135deg,rgba(46,196,182,.15),rgba(107,91,255,.10))!important;border-left-color:#67edc1!important}.assistant-message.user{color:#f1ecff!important;background:linear-gradient(135deg,#6557d9,#9b62d0)!important;box-shadow:0 10px 24px rgba(101,87,217,.24)!important}
+    .assistant-suggestion{border-color:rgba(156,140,255,.32)!important;color:#d3caff!important;background:linear-gradient(135deg,rgba(107,91,255,.20),rgba(46,196,182,.08))!important}.assistant-suggestion:nth-child(2){color:#9debd5!important}.assistant-suggestion:nth-child(3){color:#f3b8dc!important;border-color:rgba(243,184,220,.24)!important}.assistant-suggestion:nth-child(4){color:#a8d6ff!important}.assistant-suggestion:hover{border-color:#67edc1!important;background:linear-gradient(135deg,rgba(107,91,255,.32),rgba(46,196,182,.14))!important;color:#effcff!important}
+    .assistant-form{border-color:rgba(156,140,255,.28)!important;background:rgba(11,18,43,.82)!important}.assistant-input{color:#bdf5df!important}.assistant-input::placeholder{color:#9187bd!important}.assistant-send{background:linear-gradient(135deg,#6557d9,#32b8a1)!important;color:#f3ecff!important}.assistant-toggle{border-color:#9c8cff!important;box-shadow:0 0 0 7px rgba(156,140,255,.09),0 12px 38px rgba(101,87,217,.42)!important}
+
+</style>
 </head>
 <body>
 <div id="loader" role="status" aria-label="Memuat halaman">
