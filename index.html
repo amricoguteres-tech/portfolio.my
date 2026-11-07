@@ -133,9 +133,12 @@
     @media(max-width:600px){.orb{width:min(300px,84vw)}.profile-photo{width:64%;height:64%}}
 
     /* Profile identity double-click card */
-    .identity-flip{position:absolute;z-index:6;width:68%;height:68%;border-radius:50%;transform-style:preserve-3d;cursor:pointer;transition:transform .85s cubic-bezier(.16,1,.3,1),width .85s cubic-bezier(.16,1,.3,1),height .85s cubic-bezier(.16,1,.3,1),border-radius .85s ease;will-change:transform}
+    html{scroll-behavior:smooth}
+    .identity-flip{position:absolute;z-index:6;width:68%;height:68%;border-radius:50%;transform-style:preserve-3d;touch-action:manipulation;cursor:pointer;transition:transform 1.05s cubic-bezier(.2,.75,.25,1),width .95s cubic-bezier(.2,.75,.25,1),height .95s cubic-bezier(.2,.75,.25,1),border-radius .95s cubic-bezier(.2,.75,.25,1),filter .6s ease,box-shadow .6s ease;will-change:transform,width,height,border-radius}
     .identity-flip.flipped{width:82%;height:auto;aspect-ratio:1050/600;border-radius:14px;transform:rotateY(180deg)}
-    .identity-face{position:absolute;inset:0;border-radius:inherit;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+    .identity-face{position:absolute;inset:0;border-radius:inherit;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;transition:opacity .4s ease,filter .55s ease}
+    .identity-front{filter:saturate(.96)}
+    .identity-flip:not(.flipped):hover{filter:brightness(1.04);transform:translateZ(18px) scale(1.018)}
     .identity-front{border-radius:50%;background:#09182f}.identity-front .profile-photo{width:100%!important;height:100%!important;object-fit:cover;border:3px solid rgba(140,236,255,.55)}
     .identity-back{display:grid;place-items:center;border:1px solid rgba(112,167,255,.38);border-radius:14px;background:#0b1a32;transform:rotateY(180deg);box-shadow:0 18px 48px rgba(0,0,0,.42),0 0 30px rgba(112,167,255,.18)}
     .identity-back img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
@@ -153,7 +156,7 @@
     .identity-front .profile-photo{object-position:center 18%!important;box-shadow:0 12px 38px rgba(32,217,255,.34)!important}
     /* Premium motion layer */
     .cursor-light{position:fixed;width:280px;height:280px;border-radius:50%;z-index:-1;pointer-events:none;opacity:.35;background:radial-gradient(circle,rgba(112,167,255,.18),rgba(112,167,255,.07) 32%,transparent 68%);transform:translate(-50%,-50%);will-change:left,top}
-    .orb{transform-style:preserve-3d;will-change:transform}.profile-photo{animation:profileBreath 6s ease-in-out infinite;will-change:transform,filter}.float-card{transform-style:preserve-3d;will-change:transform}
+    .orb{transform-style:preserve-3d;will-change:transform;transition:transform .38s cubic-bezier(.2,.75,.25,1)}.profile-photo{animation:profileBreath 6s ease-in-out infinite;will-change:transform,filter}.float-card{transform-style:preserve-3d;will-change:transform}
     .reveal{filter:blur(7px);transform:translateY(38px) scale(.985)!important;clip-path:inset(8% 0 0 0)}.reveal.show{filter:none!important;transform:none!important;clip-path:inset(0)}
     .section-head.reveal h2,.hero h1{background:linear-gradient(90deg,#edf4ff,#a9c6ff,#edf4ff);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:titleShimmer 7s linear infinite}
     .card,.certificate-card,.award-card,.project-card,.tech-card{transform-style:preserve-3d;position:relative;overflow:hidden}
