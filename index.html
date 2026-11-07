@@ -110,6 +110,22 @@
     @media(max-width:850px){nav{height:68px}.nav-toggle{display:flex}.navlinks{position:absolute;top:68px;left:4%;right:4%;display:none;flex-direction:column;gap:0;padding:8px;border:1px solid var(--line);border-radius:10px;background:#09182f;box-shadow:0 18px 40px rgba(0,0,0,.45)}.navlinks.open{display:flex}.navlinks a{padding:13px 12px;border-bottom:1px solid rgba(100,150,210,.1)}.navlinks a:last-child{border-bottom:0}nav>.button{margin-left:auto;padding:10px 12px;font-size:.78rem}.hero{min-height:auto;grid-template-columns:1fr;padding:55px 0 35px}.visual{min-height:380px}.terminal{max-width:100%}.skills-grid,.projects-grid,.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.award-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact{padding:28px}.award-card img{height:260px}}
     @media(max-width:600px){section{padding:48px 0}.wrap{width:calc(100% - 32px)}nav{gap:10px}.brand{font-size:1.05rem}nav>.button{display:none}.hero{padding-top:40px}.hero h1{font-size:clamp(2.55rem,15vw,3.5rem);letter-spacing:-2px}.role{font-size:1rem}.intro{font-size:.92rem;line-height:1.75}.actions{display:grid;grid-template-columns:1fr}.actions .button{width:100%}.terminal{margin-top:28px}.termtext{font-size:.76rem;overflow-wrap:anywhere}.visual{min-height:320px}.orb{width:min(280px,78vw)}.shield{font-size:6rem}.profile-photo{width:64%;height:64%}.float-card{font-size:.68rem;padding:10px}.fc1{top:5%;right:-1%}.fc2{bottom:8%;left:-1%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.card{padding:20px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:12px 4px}.stat b{font-size:1.35rem}.contact{padding:22px}.contact h2{font-size:2rem}.contact-actions{width:100%}.contact-actions>.button:not(.social-button){width:100%}.certificate-card img{height:auto;max-height:220px}.award-card img{height:auto;max-height:240px}.certificate-modal{padding:12px}.certificate-modal img{width:100%;max-height:82vh;object-fit:contain}.footer-inner{flex-direction:column;text-align:center;align-items:center}.assistant-widget{right:12px;bottom:12px}.assistant-panel{right:-4px;width:min(360px,calc(100vw - 24px));max-height:calc(100dvh - 100px);height:520px}.assistant-toggle{width:56px;height:56px}}
     @media(max-width:360px){.wrap{width:calc(100% - 24px)}.hero h1{font-size:2.35rem}.orb{width:250px}.visual{min-height:290px}.float-card{display:none}.stats{grid-template-columns:1fr}.assistant-panel{width:calc(100vw - 16px);right:-4px;height:min(500px,calc(100dvh - 90px))}.assistant-header{padding:10px}.assistant-header-avatar{width:38px;height:38px}}
+    .scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;z-index:9998;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+    .ambient-glow{position:fixed;width:280px;height:280px;z-index:-1;pointer-events:none;border-radius:50%;background:#123a68;opacity:.18;filter:blur(70px);transform:translate(-50%,-50%)}
+    .hero .eyebrow{animation:eyebrowIn .8s ease both}.hero h1{animation:titleIn .9s cubic-bezier(.2,.8,.2,1) both .12s}.hero .role{animation:titleIn .8s ease both .28s}.hero .intro,.hero .actions,.hero .terminal{animation:titleIn .85s ease both}.hero .intro{animation-delay:.38s}.hero .actions{animation-delay:.48s}.hero .terminal{animation-delay:.58s}
+    .visual .orb{animation:orbFloat 5s ease-in-out infinite}.float-card{animation:cardFloat 4s ease-in-out infinite}.fc2{animation-delay:-2s}
+    .card{transition:transform .18s ease,border-color .25s ease,box-shadow .25s ease;transform-style:preserve-3d}.card.motion-card:hover{border-color:rgba(32,217,255,.65);box-shadow:0 18px 45px rgba(0,0,0,.38),0 0 24px rgba(32,217,255,.09)}
+    .reveal{transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1)}.reveal:nth-of-type(2){transition-delay:.08s}.reveal:nth-of-type(3){transition-delay:.16s}
+    .button{position:relative;overflow:hidden}.button .ripple{position:absolute;width:12px;height:12px;border-radius:50%;background:#9cecff;pointer-events:none;transform:scale(0);animation:ripple .55s ease-out}
+    .assistant-toggle{animation:assistantPulse 2.6s ease-in-out infinite}.assistant-toggle:hover{animation:none;transform:scale(1.06)}
+    .certificate-card,.award-card{isolation:isolate}.certificate-card img,.award-card img{transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease}.certificate-card:hover img,.award-card:hover img{transform:scale(1.035);filter:saturate(1.08) contrast(1.04)}
+    @keyframes titleIn{from{opacity:0;transform:translateY(28px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+    @keyframes eyebrowIn{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+    @keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes assistantPulse{0%,100%{box-shadow:0 8px 35px rgba(32,217,255,.28)}50%{box-shadow:0 8px 42px rgba(32,217,255,.52),0 0 0 8px rgba(32,217,255,.06)}}
+    @keyframes ripple{to{transform:scale(14);opacity:0}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.card{transform:none!important}}
   </style>
 </head>
 <body>
@@ -640,6 +656,51 @@
   });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeCertificateModal();
+  });
+
+  const scrollProgress = document.createElement('div');
+  scrollProgress.className = 'scroll-progress';
+  document.body.appendChild(scrollProgress);
+  const ambientGlow = document.createElement('div');
+  ambientGlow.className = 'ambient-glow';
+  document.body.appendChild(ambientGlow);
+
+  function updateScrollProgress() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    scrollProgress.style.width = progress + '%';
+  }
+  window.addEventListener('scroll', updateScrollProgress, {passive:true});
+  updateScrollProgress();
+
+  if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('pointermove', event => {
+      ambientGlow.style.left = event.clientX + 'px';
+      ambientGlow.style.top = event.clientY + 'px';
+    }, {passive:true});
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.add('motion-card');
+      card.addEventListener('pointermove', event => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        card.style.transform = `perspective(900px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg) translateY(-3px)`;
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+  }
+
+  document.querySelectorAll('.button').forEach(button => {
+    button.addEventListener('pointerdown', event => {
+      const rect = button.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.left = (event.clientX - rect.left - 6) + 'px';
+      ripple.style.top = (event.clientY - rect.top - 6) + 'px';
+      button.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
   });
 
   const navToggle = document.getElementById('navToggle');
