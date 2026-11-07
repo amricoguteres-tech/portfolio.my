@@ -41,7 +41,7 @@
     .shield{font-size:9rem;filter:drop-shadow(0 0 22px #168cff);color:#8cecff;text-shadow:0 0 25px #168cff}
     .profile-photo{width:68%;height:68%;object-fit:cover;border-radius:50%;border:3px solid rgba(140,236,255,.55);box-shadow:0 0 35px rgba(32,217,255,.48);position:relative;z-index:2}
     .float-card{position:absolute;padding:13px 16px;background:rgba(6,17,35,.9);border:1px solid var(--line);border-radius:9px;box-shadow:0 0 25px rgba(32,217,255,.1);font-size:.78rem;color:#cde4ff}
-    .float-card b{display:block;color:var(--cyan);font-size:.9rem;margin-bottom:4px}.fc1{top:12%;right:-1%}.fc2{bottom:15%;left:-3%}
+    .float-card b{display:block;color:var(--cyan);font-size:.9rem;margin-bottom:4px}.fc1{top:12%;right:-1%}.fc2{bottom:15%;left:-3%}.nametag{width:220px;height:292px}.nametag-photo{height:212px}
     @keyframes spin{to{transform:rotate(360deg)}}
     section{padding:68px 0}.section-head{margin-bottom:30px}.section-head .eyebrow{margin-bottom:10px}h2{font:700 clamp(2rem,4vw,2.8rem) "Space Grotesk";margin:0;letter-spacing:-1.5px}.section-head p{color:var(--muted);line-height:1.7}
     .grid{display:grid;gap:18px}.about-grid{grid-template-columns:1fr 1fr}.skills-grid{grid-template-columns:repeat(3,1fr)}.projects-grid{grid-template-columns:repeat(3,1fr)}
@@ -108,9 +108,19 @@
     .nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:8px;background:#09182f;color:var(--text);cursor:pointer;align-items:center;justify-content:center;font-size:1.35rem}
     @media(max-width:1100px){.wrap{width:min(960px,92%)}.hero{grid-template-columns:1fr 1fr;gap:24px}.orb{width:min(370px,82vw)}h1{font-size:clamp(3rem,8vw,4.8rem)}.projects-grid,.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{gap:18px}}
     @media(max-width:850px){nav{height:68px}.nav-toggle{display:flex}.navlinks{position:absolute;top:68px;left:4%;right:4%;display:none;flex-direction:column;gap:0;padding:8px;border:1px solid var(--line);border-radius:10px;background:#09182f;box-shadow:0 18px 40px rgba(0,0,0,.45)}.navlinks.open{display:flex}.navlinks a{padding:13px 12px;border-bottom:1px solid rgba(100,150,210,.1)}.navlinks a:last-child{border-bottom:0}nav>.button{margin-left:auto;padding:10px 12px;font-size:.78rem}.hero{min-height:auto;grid-template-columns:1fr;padding:55px 0 35px}.visual{min-height:380px}.terminal{max-width:100%}.skills-grid,.projects-grid,.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.award-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact{padding:28px}.award-card img{height:260px}}
-    @media(max-width:600px){section{padding:48px 0}.wrap{width:calc(100% - 32px)}nav{gap:10px}.brand{font-size:1.05rem}nav>.button{display:none}.hero{padding-top:40px}.hero h1{font-size:clamp(2.55rem,15vw,3.5rem);letter-spacing:-2px}.role{font-size:1rem}.intro{font-size:.92rem;line-height:1.75}.actions{display:grid;grid-template-columns:1fr}.actions .button{width:100%}.terminal{margin-top:28px}.termtext{font-size:.76rem;overflow-wrap:anywhere}.visual{min-height:320px}.orb{width:min(280px,78vw)}.shield{font-size:6rem}.profile-photo{width:64%;height:64%}.float-card{font-size:.68rem;padding:10px}.fc1{top:5%;right:-1%}.fc2{bottom:8%;left:-1%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.card{padding:20px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:12px 4px}.stat b{font-size:1.35rem}.contact{padding:22px}.contact h2{font-size:2rem}.contact-actions{width:100%}.contact-actions>.button:not(.social-button){width:100%}.certificate-card img{height:auto;max-height:220px}.award-card img{height:auto;max-height:240px}.certificate-modal{padding:12px}.certificate-modal img{width:100%;max-height:82vh;object-fit:contain}.footer-inner{flex-direction:column;text-align:center;align-items:center}.assistant-widget{right:12px;bottom:12px}.assistant-panel{right:-4px;width:min(360px,calc(100vw - 24px));max-height:calc(100dvh - 100px);height:520px}.assistant-toggle{width:56px;height:56px}}
+    @media(max-width:600px){section{padding:48px 0}.wrap{width:calc(100% - 32px)}nav{gap:10px}.brand{font-size:1.05rem}nav>.button{display:none}.hero{padding-top:40px}.hero h1{font-size:clamp(2.55rem,15vw,3.5rem);letter-spacing:-2px}.role{font-size:1rem}.intro{font-size:.92rem;line-height:1.75}.actions{display:grid;grid-template-columns:1fr}.actions .button{width:100%}.terminal{margin-top:28px}.termtext{font-size:.76rem;overflow-wrap:anywhere}.visual{min-height:320px}.orb{width:min(280px,78vw)}.shield{font-size:6rem}.profile-photo{width:64%;height:64%}.nametag{width:188px;height:252px}.nametag-photo{height:170px}.nametag-info{padding:7px 9px}.nametag-info strong{font-size:.78rem}.nametag-bar{height:34px;font-size:.58rem}.drag-tip{bottom:1%}.float-card{font-size:.68rem;padding:10px}.fc1{top:5%;right:-1%}.fc2{bottom:8%;left:-1%}.about-grid,.skills-grid,.projects-grid,.certificate-grid,.award-grid{grid-template-columns:1fr}.card{padding:20px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:12px 4px}.stat b{font-size:1.35rem}.contact{padding:22px}.contact h2{font-size:2rem}.contact-actions{width:100%}.contact-actions>.button:not(.social-button){width:100%}.certificate-card img{height:auto;max-height:220px}.award-card img{height:auto;max-height:240px}.certificate-modal{padding:12px}.certificate-modal img{width:100%;max-height:82vh;object-fit:contain}.footer-inner{flex-direction:column;text-align:center;align-items:center}.assistant-widget{right:12px;bottom:12px}.assistant-panel{right:-4px;width:min(360px,calc(100vw - 24px));max-height:calc(100dvh - 100px);height:520px}.assistant-toggle{width:56px;height:56px}}
     @media(max-width:360px){.wrap{width:calc(100% - 24px)}.hero h1{font-size:2.35rem}.orb{width:250px}.visual{min-height:290px}.float-card{display:none}.stats{grid-template-columns:1fr}.assistant-panel{width:calc(100vw - 16px);right:-4px;height:min(500px,calc(100dvh - 90px))}.assistant-header{padding:10px}.assistant-header-avatar{width:38px;height:38px}}
-    .scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;z-index:9998;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+    .profile-photo{display:none}
+    .orb{border-radius:50%;overflow:hidden}
+    .nametag{position:relative;z-index:5;width:min(250px,62%);height:min(330px,68%);border:1px solid rgba(32,217,255,.72);border-radius:16px;background:#09182f;box-shadow:0 22px 45px rgba(0,0,0,.48),0 0 26px rgba(32,217,255,.18);overflow:hidden;cursor:grab;touch-action:none;user-select:none;transform:translate(0,0) rotate(-2deg);transition:box-shadow .2s ease;will-change:transform}
+    .nametag:active{cursor:grabbing;box-shadow:0 28px 55px rgba(0,0,0,.58),0 0 34px rgba(32,217,255,.32)}
+    .nametag-strap{position:absolute;z-index:-1;width:18px;height:170px;top:-155px;left:50%;transform:translateX(-50%);border-radius:12px;border:2px solid rgba(32,217,255,.5);background:#102b4d}
+    .nametag-bar{height:38px;display:flex;align-items:center;justify-content:center;background:#0d3a60;border-bottom:1px solid rgba(32,217,255,.48);font:700 .68rem "Space Grotesk";letter-spacing:2px;color:#bceeff;text-transform:uppercase}
+    .nametag-photo{display:block;width:100%;height:244px;object-fit:cover;object-position:center 18%;border-bottom:1px solid rgba(32,217,255,.5)}
+    .nametag-info{height:auto;min-height:48px;padding:8px 12px;background:#07101f}.nametag-info strong{display:block;font:700 .9rem "Space Grotesk";letter-spacing:.3px;color:#fff}.nametag-info span{display:block;margin-top:2px;color:var(--green);font:.62rem monospace;letter-spacing:1px}
+    .nametag-handle{position:absolute;right:10px;top:45px;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:-12px 0 0 rgba(32,217,255,.45),12px 0 0 rgba(32,217,255,.45);opacity:.75}
+    .drag-tip{position:absolute;z-index:8;bottom:4%;left:50%;transform:translateX(-50%);padding:6px 10px;border:1px solid rgba(32,217,255,.25);border-radius:20px;background:#07101f;color:#a7bdd6;font:.62rem "Inter";white-space:nowrap;pointer-events:none}
+        .scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;z-index:9998;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
     .ambient-glow{position:fixed;width:280px;height:280px;z-index:-1;pointer-events:none;border-radius:50%;background:#123a68;opacity:.18;filter:blur(70px);transform:translate(-50%,-50%)}
     .hero .eyebrow{animation:eyebrowIn .8s ease both}.hero h1{animation:titleIn .9s cubic-bezier(.2,.8,.2,1) both .12s}.hero .role{animation:titleIn .8s ease both .28s}.hero .intro,.hero .actions,.hero .terminal{animation:titleIn .85s ease both}.hero .intro{animation-delay:.38s}.hero .actions{animation-delay:.48s}.hero .terminal{animation-delay:.58s}
     .visual .orb{animation:orbFloat 5s ease-in-out infinite}.float-card{animation:cardFloat 4s ease-in-out infinite}.fc2{animation-delay:-2s}
@@ -203,7 +213,14 @@
       </div>
       <div class="visual reveal">
 <div class="orb">
-<img class="profile-photo" src="Anrico_Guteres_Profile.png" alt="Anrico Guteres">
+<div class="nametag" id="profileNametag" role="img" aria-label="Nametag Anrico Guteres">
+<div class="nametag-strap"></div>
+<div class="nametag-bar">ANRICO • DEV</div>
+<img class="nametag-photo" src="Anrico_Guteres_Profile.png" alt="Foto Anrico Guteres">
+<div class="nametag-info"><strong>Anrico Guteres</strong><span>CYBER SECURITY</span></div>
+<span class="nametag-handle" aria-hidden="true"></span>
+</div>
+<div class="drag-tip">↔ TARIK NAMETAG</div>
 </div>
 <div class="float-card fc1">
 <b>◈ SECURITY FIRST</b>Protecting digital assets</div>
@@ -657,6 +674,42 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeCertificateModal();
   });
+
+  const profileNametag = document.getElementById('profileNametag');
+  if (profileNametag && window.matchMedia('(prefers-reduced-motion: reduce)').matches === false) {
+    let dragging = false;
+    let activeX = 0;
+    let activeY = 0;
+    let startX = 0;
+    let startY = 0;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    function moveNametag(clientX, clientY) {
+      const nextX = offsetX + clientX - startX;
+      const nextY = offsetY + clientY - startY;
+      activeX = Math.max(-90, Math.min(90, nextX));
+      activeY = Math.max(-55, Math.min(75, nextY));
+      profileNametag.style.transform = `translate(${activeX}px, ${activeY}px) rotate(${activeX / 18 - 2}deg)`;
+    }
+
+    profileNametag.addEventListener('pointerdown', event => {
+      dragging = true;
+      startX = event.clientX;
+      startY = event.clientY;
+      offsetX = activeX;
+      offsetY = activeY;
+      profileNametag.setPointerCapture(event.pointerId);
+    });
+    profileNametag.addEventListener('pointermove', event => {
+      if (dragging) moveNametag(event.clientX, event.clientY);
+    });
+    profileNametag.addEventListener('pointerup', event => {
+      dragging = false;
+      if (profileNametag.hasPointerCapture(event.pointerId)) profileNametag.releasePointerCapture(event.pointerId);
+    });
+    profileNametag.addEventListener('pointercancel', () => { dragging = false; });
+  }
 
   const scrollProgress = document.createElement('div');
   scrollProgress.className = 'scroll-progress';
